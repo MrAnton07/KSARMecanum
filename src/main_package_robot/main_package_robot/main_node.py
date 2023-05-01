@@ -50,12 +50,12 @@ class MainAlg(Node):
                 self.get_logger().info('I heard: "%d"' % msg.data[0])
                 if msg.data[0] == 0  or msg.data[0] == 2:
                     dist_mark = msg.data[1]
-                    if dist_mark <-5:
+                    if dist_mark <-15:
                         self.motor_publisher(10,3)
-                    elif dist_mark >5:
+                    elif dist_mark >15:
                         self.motor_publisher(10,4)
                     else:
-                        self.motor_publisher(0,0)    
+                        self.motor_publisher(10,1)    
         if self.__flag == 2:
             pass
         if self.__flag == 3:

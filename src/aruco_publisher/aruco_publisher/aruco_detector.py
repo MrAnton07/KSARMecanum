@@ -64,7 +64,7 @@ class DetectorPublisher(Node):
                     self.get_logger().info('Publish:  - Blue')
                     self.publisher_.publish(msg)
 
-            cv2.imshow('frame', frame)
+            #cv2.imshow('frame', frame)
 
             # остановка при нажатии на клавишу 'q'
             if cv2.waitKey(1) & 0xFF == ord('q'):

@@ -12,19 +12,20 @@ class MinimalSubscriber(Node):
         self.ser = serial.Serial('/dev/ttyACM0', 115200, timeout=1)
         self.subscription = self.create_subscription(
             Int32MultiArray,
-            'distance_topic',
+            'motor_control_topic',
             self.listener_callback,
             10)
         self.subscription  # prevent unused variable warning
 
     def listener_callback(self, msg):
         self.get_logger().info('I heard: "%d"' % msg.data[1])
-        if (msg.data[1]>30):
-                self.ser.write(b"3\n")
-        elif (msg.data[1]<20):
-                self.ser.write(b"0\n")
-        elif (msg.data[1]>=20) or (msg.data[1]<=30):
-                self.ser.write(b"0\n")
+        if (msg.data[1] == 3):
+            self.ser.write(b"3\n")
+        elif (msg.data[1] == 4):
+            self.ser.write(b"4\n")
+        else:
+            self.ser.write(b"0\n")
+        #self.ser.write(str(msg.data[1]).encode())
         self.ser.reset_input_buffer()
 
 def main(args=None):
