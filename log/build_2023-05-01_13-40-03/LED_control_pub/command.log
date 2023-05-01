@@ -1,0 +1,2 @@
+Invoking command in '/home/anton/KSARMecanum/build/LED_control_pub': /usr/bin/cmake /home/anton/KSARMecanum/src/LED_control_pub -DCMAKE_INSTALL_PREFIX=/home/anton/KSARMecanum/install/LED_control_pub
+Invoked command in '/home/anton/KSARMecanum/build/LED_control_pub' returned '1': /usr/bin/cmake /home/anton/KSARMecanum/src/LED_control_pub -DCMAKE_INSTALL_PREFIX=/home/anton/KSARMecanum/install/LED_control_pub

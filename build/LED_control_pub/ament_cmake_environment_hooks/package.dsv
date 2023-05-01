@@ -1,0 +1,4 @@
+source;share/LED_control_pub/local_setup.bash
+source;share/LED_control_pub/local_setup.dsv
+source;share/LED_control_pub/local_setup.sh
+source;share/LED_control_pub/local_setup.zsh
