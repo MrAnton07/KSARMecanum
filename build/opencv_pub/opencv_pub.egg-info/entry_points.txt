@@ -1,3 +1,0 @@
-[console_scripts]
-CAM = opencv_pub.camera_vision_publisher:main
-

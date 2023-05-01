@@ -1,3 +1,0 @@
-[console_scripts]
-SUB = led_control_sub.led_control_subscriber:main
-

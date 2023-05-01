@@ -1,3 +1,0 @@
-[console_scripts]
-ARUCO = aruco_publisher.aruco_detector:main
-

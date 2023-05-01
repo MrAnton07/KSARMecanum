@@ -1,3 +1,0 @@
-[console_scripts]
-distance_publisher = distance_node.distance_publisher:main
-

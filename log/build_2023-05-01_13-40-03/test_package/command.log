@@ -1,1 +1,0 @@
-Invoking command in '/home/anton/KSARMecanum/build/test_package': /usr/bin/cmake /home/anton/KSARMecanum/src/test_package -DCMAKE_INSTALL_PREFIX=/home/anton/KSARMecanum/install/test_package
