@@ -14,7 +14,8 @@ class DetectorPublisher(Node):
         cap = cv2.VideoCapture(0)
         cap.set(cv2.CAP_PROP_FPS, 30)
         msg = Int32MultiArray()
-
+        ret, frame = cap.read()
+        frame_width = frame.shape[1] #w:image-width and h:image-height
         while True:
             iSee = []
             ret, frame = cap.read()
@@ -27,7 +28,7 @@ class DetectorPublisher(Node):
 
             # детектирование маркеров во входном кадре
             corners, ids, rejectedImgPoints = aruco.detectMarkers(frame, aruco_dict, parameters=parameters)
-
+            x_centerDiff = 1000
             # если маркеры обнаружены
             if ids is not None:
                 # рисуем границы маркеров и выводим их идентификаторы
@@ -37,8 +38,20 @@ class DetectorPublisher(Node):
                 for i in range(len(ids)):
                     c = corners[i][0]
                     iSee.append(int(ids[i]))
-    
-            msg.data = iSee
+                msg.data = iSee
+                if 0 in ids:
+                    centerX = corners[0][0][0][0]+ corners[0][0][1][0]
+                    x_centerDiff = int(centerX/2 - frame_width/2)
+                    msg.data.insert(x_centerDiff, 0)
+                    msg.data.insert(0, 1)
+                    self.publisher_.publish(msg)
+                elif 2 in ids:
+                    centerX = corners[0][0][0][0]+ corners[0][0][1][0]
+                    x_centerDiff = int(centerX/2 - frame_width/2)
+                    msg.data.insert(x_centerDiff, 0)
+                    msg.data.insert(2, 1)
+                    self.publisher_.publish(msg)
+            
             if 11 in  msg.data:
                 self.get_logger().info('Publish:  - Red')
             elif 12 in  msg.data:
@@ -46,7 +59,7 @@ class DetectorPublisher(Node):
             elif 13 in  msg.data:
                 self.get_logger().info('Publish:  - Blue')
             else:
-                self.get_logger().info('Publish:  - No Color')
+                self.get_logger().info('Publish:  - No Color "%d"' % x_centerDiff)
             self.publisher_.publish(msg)
 
             cv2.imshow('frame', frame)
