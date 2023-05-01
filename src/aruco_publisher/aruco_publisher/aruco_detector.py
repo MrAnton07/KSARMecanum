@@ -43,7 +43,7 @@ class DetectorPublisher(Node):
                     centerX = corners[0][0][0][0]+ corners[0][0][1][0]
                     x_centerDiff = int(centerX/2 - frame_width/2)
                     msg.data.insert(1, x_centerDiff)
-                    msg.data.insert(0, 0)
+                    msg.data.insert(2, 0)
                     self.publisher_.publish(msg)
                     self.get_logger().info('Publish:  - No Color "%d"' % x_centerDiff)
                 elif 2 in ids:
