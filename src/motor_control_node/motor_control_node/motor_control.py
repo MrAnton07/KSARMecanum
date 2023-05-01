@@ -8,7 +8,7 @@ from std_msgs.msg import Int32MultiArray
 class MinimalSubscriber(Node):
 
     def __init__(self):
-        super().__init__('minimal_subscriber')
+        super().__init__('motor_topic_subscriber')
         self.ser = serial.Serial('/dev/ttyACM0', 115200, timeout=1)
         self.subscription = self.create_subscription(
             Int32MultiArray,

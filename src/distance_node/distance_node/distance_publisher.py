@@ -10,7 +10,7 @@ from std_msgs.msg import Int32MultiArray
 class DistancePublisher(Node):
 
     def __init__(self):
-        super().__init__('minimal_publisher')
+        super().__init__('distance_publisher')
         self.publisher_ = self.create_publisher(Int32MultiArray, 'distance_topic', 10)
         self.ser = serial.Serial('/dev/ttyUSB0', 9600, timeout=1)
         self.str_mess = ""
