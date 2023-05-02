@@ -1,0 +1,264 @@
+[0.000000] (-) TimerEvent: {}
+[0.002753] (aruco_publisher) JobQueued: {'identifier': 'aruco_publisher', 'dependencies': OrderedDict()}
+[0.002983] (distance_node) JobQueued: {'identifier': 'distance_node', 'dependencies': OrderedDict()}
+[0.003247] (main_package_robot) JobQueued: {'identifier': 'main_package_robot', 'dependencies': OrderedDict()}
+[0.003397] (motor_control_node) JobQueued: {'identifier': 'motor_control_node', 'dependencies': OrderedDict()}
+[0.003479] (opencv_pub) JobQueued: {'identifier': 'opencv_pub', 'dependencies': OrderedDict()}
+[0.003558] (aruco_publisher) JobStarted: {'identifier': 'aruco_publisher'}
+[0.054952] (distance_node) JobStarted: {'identifier': 'distance_node'}
+[0.093550] (main_package_robot) JobStarted: {'identifier': 'main_package_robot'}
+[0.099430] (-) TimerEvent: {}
+[0.133231] (motor_control_node) JobStarted: {'identifier': 'motor_control_node'}
+[0.199616] (-) TimerEvent: {}
+[0.300299] (-) TimerEvent: {}
+[0.400982] (-) TimerEvent: {}
+[0.501651] (-) TimerEvent: {}
+[0.602307] (-) TimerEvent: {}
+[0.702929] (-) TimerEvent: {}
+[0.803589] (-) TimerEvent: {}
+[0.904205] (-) TimerEvent: {}
+[1.004812] (-) TimerEvent: {}
+[1.105440] (-) TimerEvent: {}
+[1.206192] (-) TimerEvent: {}
+[1.307320] (-) TimerEvent: {}
+[1.408145] (-) TimerEvent: {}
+[1.508791] (-) TimerEvent: {}
+[1.609444] (-) TimerEvent: {}
+[1.710086] (-) TimerEvent: {}
+[1.810710] (-) TimerEvent: {}
+[1.911349] (-) TimerEvent: {}
+[2.011997] (-) TimerEvent: {}
+[2.112652] (-) TimerEvent: {}
+[2.213287] (-) TimerEvent: {}
+[2.314023] (-) TimerEvent: {}
+[2.415055] (-) TimerEvent: {}
+[2.515758] (-) TimerEvent: {}
+[2.616383] (-) TimerEvent: {}
+[2.717112] (-) TimerEvent: {}
+[2.817835] (-) TimerEvent: {}
+[2.918588] (-) TimerEvent: {}
+[3.019199] (-) TimerEvent: {}
+[3.119940] (-) TimerEvent: {}
+[3.220594] (-) TimerEvent: {}
+[3.321417] (-) TimerEvent: {}
+[3.422039] (-) TimerEvent: {}
+[3.522764] (-) TimerEvent: {}
+[3.623776] (-) TimerEvent: {}
+[3.724504] (-) TimerEvent: {}
+[3.825165] (-) TimerEvent: {}
+[3.925832] (-) TimerEvent: {}
+[4.026492] (-) TimerEvent: {}
+[4.127115] (-) TimerEvent: {}
+[4.227748] (-) TimerEvent: {}
+[4.328356] (-) TimerEvent: {}
+[4.429003] (-) TimerEvent: {}
+[4.529636] (-) TimerEvent: {}
+[4.630404] (-) TimerEvent: {}
+[4.731527] (-) TimerEvent: {}
+[4.833514] (-) TimerEvent: {}
+[4.935517] (-) TimerEvent: {}
+[5.036577] (-) TimerEvent: {}
+[5.137518] (-) TimerEvent: {}
+[5.238641] (-) TimerEvent: {}
+[5.339490] (-) TimerEvent: {}
+[5.440336] (-) TimerEvent: {}
+[5.541177] (-) TimerEvent: {}
+[5.642007] (-) TimerEvent: {}
+[5.742783] (-) TimerEvent: {}
+[5.843675] (-) TimerEvent: {}
+[5.944520] (-) TimerEvent: {}
+[6.045457] (-) TimerEvent: {}
+[6.146394] (-) TimerEvent: {}
+[6.247261] (-) TimerEvent: {}
+[6.348446] (-) TimerEvent: {}
+[6.449483] (-) TimerEvent: {}
+[6.550535] (-) TimerEvent: {}
+[6.652350] (-) TimerEvent: {}
+[6.754353] (-) TimerEvent: {}
+[6.856938] (-) TimerEvent: {}
+[6.959217] (-) TimerEvent: {}
+[6.980179] (aruco_publisher) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', '../../build/aruco_publisher', 'build', '--build-base', '/home/pi/KSARMecanum/build/aruco_publisher/build', 'install', '--record', '/home/pi/KSARMecanum/build/aruco_publisher/install.log', '--single-version-externally-managed'], 'cwd': '/home/pi/KSARMecanum/src/aruco_publisher', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'pi', 'SSH_CLIENT': '192.168.0.16 52770 22', 'LC_TIME': 'ru_RU.UTF-8', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'MOTD_SHOWN': 'pam', 'HOME': '/home/pi', 'OLDPWD': '/home/pi', 'SSH_TTY': '/dev/pts/0', 'ROS_PYTHON_VERSION': '3', 'LC_MONETARY': 'ru_RU.UTF-8', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLCON_PREFIX_PATH': '/home/pi/KSARMecanum/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'pi', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '4', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/home/pi/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'LC_ADDRESS': 'ru_RU.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'LC_TELEPHONE': 'ru_RU.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/home/pi/KSARMecanum/install/opencv_pub:/home/pi/KSARMecanum/install/motor_control_node:/home/pi/KSARMecanum/install/main_package_robot:/home/pi/KSARMecanum/install/distance_node:/home/pi/KSARMecanum/install/aruco_publisher:/opt/ros/humble', 'SHELL': '/bin/bash', 'LC_NAME': 'ru_RU.UTF-8', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'ru_RU.UTF-8', 'LC_IDENTIFICATION': 'ru_RU.UTF-8', 'PWD': '/home/pi/KSARMecanum/build/aruco_publisher', 'LC_ALL': 'en_US.UTF-8', 'SSH_CONNECTION': '192.168.0.16 52770 192.168.0.18 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/pi/KSARMecanum/build/aruco_publisher/prefix_override:/home/pi/KSARMecanum/install/aruco_publisher/lib/python3.10/site-packages:/home/pi/KSARMecanum/install/opencv_pub/lib/python3.10/site-packages:/home/pi/KSARMecanum/install/motor_control_node/lib/python3.10/site-packages:/home/pi/KSARMecanum/install/main_package_robot/lib/python3.10/site-packages:/home/pi/KSARMecanum/install/distance_node/lib/python3.10/site-packages:/home/pi/KSARMecanum/install/aruco_publisher/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'LC_NUMERIC': 'ru_RU.UTF-8', 'LC_PAPER': 'ru_RU.UTF-8', 'COLCON': '1'}, 'shell': False}
+[7.023678] (distance_node) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', '../../build/distance_node', 'build', '--build-base', '/home/pi/KSARMecanum/build/distance_node/build', 'install', '--record', '/home/pi/KSARMecanum/build/distance_node/install.log', '--single-version-externally-managed'], 'cwd': '/home/pi/KSARMecanum/src/distance_node', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'pi', 'SSH_CLIENT': '192.168.0.16 52770 22', 'LC_TIME': 'ru_RU.UTF-8', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'MOTD_SHOWN': 'pam', 'HOME': '/home/pi', 'OLDPWD': '/home/pi', 'SSH_TTY': '/dev/pts/0', 'ROS_PYTHON_VERSION': '3', 'LC_MONETARY': 'ru_RU.UTF-8', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLCON_PREFIX_PATH': '/home/pi/KSARMecanum/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'pi', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '4', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/home/pi/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'LC_ADDRESS': 'ru_RU.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'LC_TELEPHONE': 'ru_RU.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/home/pi/KSARMecanum/install/opencv_pub:/home/pi/KSARMecanum/install/motor_control_node:/home/pi/KSARMecanum/install/main_package_robot:/home/pi/KSARMecanum/install/distance_node:/home/pi/KSARMecanum/install/aruco_publisher:/opt/ros/humble', 'SHELL': '/bin/bash', 'LC_NAME': 'ru_RU.UTF-8', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'ru_RU.UTF-8', 'LC_IDENTIFICATION': 'ru_RU.UTF-8', 'PWD': '/home/pi/KSARMecanum/build/distance_node', 'LC_ALL': 'en_US.UTF-8', 'SSH_CONNECTION': '192.168.0.16 52770 192.168.0.18 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/pi/KSARMecanum/build/distance_node/prefix_override:/home/pi/KSARMecanum/install/distance_node/lib/python3.10/site-packages:/home/pi/KSARMecanum/install/opencv_pub/lib/python3.10/site-packages:/home/pi/KSARMecanum/install/motor_control_node/lib/python3.10/site-packages:/home/pi/KSARMecanum/install/main_package_robot/lib/python3.10/site-packages:/home/pi/KSARMecanum/install/distance_node/lib/python3.10/site-packages:/home/pi/KSARMecanum/install/aruco_publisher/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'LC_NUMERIC': 'ru_RU.UTF-8', 'LC_PAPER': 'ru_RU.UTF-8', 'COLCON': '1'}, 'shell': False}
+[7.033413] (main_package_robot) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', '../../build/main_package_robot', 'build', '--build-base', '/home/pi/KSARMecanum/build/main_package_robot/build', 'install', '--record', '/home/pi/KSARMecanum/build/main_package_robot/install.log', '--single-version-externally-managed'], 'cwd': '/home/pi/KSARMecanum/src/main_package_robot', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'pi', 'SSH_CLIENT': '192.168.0.16 52770 22', 'LC_TIME': 'ru_RU.UTF-8', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'MOTD_SHOWN': 'pam', 'HOME': '/home/pi', 'OLDPWD': '/home/pi', 'SSH_TTY': '/dev/pts/0', 'ROS_PYTHON_VERSION': '3', 'LC_MONETARY': 'ru_RU.UTF-8', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLCON_PREFIX_PATH': '/home/pi/KSARMecanum/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'pi', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '4', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/home/pi/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'LC_ADDRESS': 'ru_RU.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'LC_TELEPHONE': 'ru_RU.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/home/pi/KSARMecanum/install/opencv_pub:/home/pi/KSARMecanum/install/motor_control_node:/home/pi/KSARMecanum/install/main_package_robot:/home/pi/KSARMecanum/install/distance_node:/home/pi/KSARMecanum/install/aruco_publisher:/opt/ros/humble', 'SHELL': '/bin/bash', 'LC_NAME': 'ru_RU.UTF-8', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'ru_RU.UTF-8', 'LC_IDENTIFICATION': 'ru_RU.UTF-8', 'PWD': '/home/pi/KSARMecanum/build/main_package_robot', 'LC_ALL': 'en_US.UTF-8', 'SSH_CONNECTION': '192.168.0.16 52770 192.168.0.18 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/pi/KSARMecanum/build/main_package_robot/prefix_override:/home/pi/KSARMecanum/install/main_package_robot/lib/python3.10/site-packages:/home/pi/KSARMecanum/install/opencv_pub/lib/python3.10/site-packages:/home/pi/KSARMecanum/install/motor_control_node/lib/python3.10/site-packages:/home/pi/KSARMecanum/install/main_package_robot/lib/python3.10/site-packages:/home/pi/KSARMecanum/install/distance_node/lib/python3.10/site-packages:/home/pi/KSARMecanum/install/aruco_publisher/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'LC_NUMERIC': 'ru_RU.UTF-8', 'LC_PAPER': 'ru_RU.UTF-8', 'COLCON': '1'}, 'shell': False}
+[7.053894] (motor_control_node) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', '../../build/motor_control_node', 'build', '--build-base', '/home/pi/KSARMecanum/build/motor_control_node/build', 'install', '--record', '/home/pi/KSARMecanum/build/motor_control_node/install.log', '--single-version-externally-managed'], 'cwd': '/home/pi/KSARMecanum/src/motor_control_node', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'pi', 'SSH_CLIENT': '192.168.0.16 52770 22', 'LC_TIME': 'ru_RU.UTF-8', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'MOTD_SHOWN': 'pam', 'HOME': '/home/pi', 'OLDPWD': '/home/pi', 'SSH_TTY': '/dev/pts/0', 'ROS_PYTHON_VERSION': '3', 'LC_MONETARY': 'ru_RU.UTF-8', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLCON_PREFIX_PATH': '/home/pi/KSARMecanum/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'pi', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '4', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/home/pi/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'LC_ADDRESS': 'ru_RU.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'LC_TELEPHONE': 'ru_RU.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/home/pi/KSARMecanum/install/opencv_pub:/home/pi/KSARMecanum/install/motor_control_node:/home/pi/KSARMecanum/install/main_package_robot:/home/pi/KSARMecanum/install/distance_node:/home/pi/KSARMecanum/install/aruco_publisher:/opt/ros/humble', 'SHELL': '/bin/bash', 'LC_NAME': 'ru_RU.UTF-8', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'ru_RU.UTF-8', 'LC_IDENTIFICATION': 'ru_RU.UTF-8', 'PWD': '/home/pi/KSARMecanum/build/motor_control_node', 'LC_ALL': 'en_US.UTF-8', 'SSH_CONNECTION': '192.168.0.16 52770 192.168.0.18 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/pi/KSARMecanum/build/motor_control_node/prefix_override:/home/pi/KSARMecanum/install/motor_control_node/lib/python3.10/site-packages:/home/pi/KSARMecanum/install/opencv_pub/lib/python3.10/site-packages:/home/pi/KSARMecanum/install/motor_control_node/lib/python3.10/site-packages:/home/pi/KSARMecanum/install/main_package_robot/lib/python3.10/site-packages:/home/pi/KSARMecanum/install/distance_node/lib/python3.10/site-packages:/home/pi/KSARMecanum/install/aruco_publisher/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'LC_NUMERIC': 'ru_RU.UTF-8', 'LC_PAPER': 'ru_RU.UTF-8', 'COLCON': '1'}, 'shell': False}
+[7.064141] (-) TimerEvent: {}
+[7.165023] (-) TimerEvent: {}
+[7.265926] (-) TimerEvent: {}
+[7.367006] (-) TimerEvent: {}
+[7.468755] (-) TimerEvent: {}
+[7.569658] (-) TimerEvent: {}
+[7.670471] (-) TimerEvent: {}
+[7.771325] (-) TimerEvent: {}
+[7.872225] (-) TimerEvent: {}
+[7.973137] (-) TimerEvent: {}
+[8.073931] (-) TimerEvent: {}
+[8.174712] (-) TimerEvent: {}
+[8.275556] (-) TimerEvent: {}
+[8.382912] (-) TimerEvent: {}
+[8.484708] (-) TimerEvent: {}
+[8.531543] (aruco_publisher) StdoutLine: {'line': b'running egg_info\n'}
+[8.535113] (aruco_publisher) StdoutLine: {'line': b'writing ../../build/aruco_publisher/aruco_publisher.egg-info/PKG-INFO\n'}
+[8.537029] (aruco_publisher) StdoutLine: {'line': b'writing dependency_links to ../../build/aruco_publisher/aruco_publisher.egg-info/dependency_links.txt\n'}
+[8.538808] (aruco_publisher) StdoutLine: {'line': b'writing entry points to ../../build/aruco_publisher/aruco_publisher.egg-info/entry_points.txt\n'}
+[8.540218] (aruco_publisher) StdoutLine: {'line': b'writing requirements to ../../build/aruco_publisher/aruco_publisher.egg-info/requires.txt\n'}
+[8.541499] (aruco_publisher) StdoutLine: {'line': b'writing top-level names to ../../build/aruco_publisher/aruco_publisher.egg-info/top_level.txt\n'}
+[8.551624] (distance_node) StdoutLine: {'line': b'running egg_info\n'}
+[8.553370] (aruco_publisher) StdoutLine: {'line': b"reading manifest file '../../build/aruco_publisher/aruco_publisher.egg-info/SOURCES.txt'\n"}
+[8.556142] (distance_node) StdoutLine: {'line': b'writing ../../build/distance_node/distance_node.egg-info/PKG-INFO\n'}
+[8.557870] (distance_node) StdoutLine: {'line': b'writing dependency_links to ../../build/distance_node/distance_node.egg-info/dependency_links.txt\n'}
+[8.558732] (aruco_publisher) StdoutLine: {'line': b"writing manifest file '../../build/aruco_publisher/aruco_publisher.egg-info/SOURCES.txt'\n"}
+[8.559618] (aruco_publisher) StdoutLine: {'line': b'running build\n'}
+[8.560679] (distance_node) StdoutLine: {'line': b'writing entry points to ../../build/distance_node/distance_node.egg-info/entry_points.txt\n'}
+[8.561291] (distance_node) StdoutLine: {'line': b'writing requirements to ../../build/distance_node/distance_node.egg-info/requires.txt\n'}
+[8.561835] (aruco_publisher) StdoutLine: {'line': b'running build_py\n'}
+[8.562866] (aruco_publisher) StdoutLine: {'line': b'running install\n'}
+[8.564055] (distance_node) StdoutLine: {'line': b'writing top-level names to ../../build/distance_node/distance_node.egg-info/top_level.txt\n'}
+[8.564613] (aruco_publisher) StderrLine: {'line': b'/usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.\n'}
+[8.565864] (aruco_publisher) StderrLine: {'line': b'  warnings.warn(\n'}
+[8.566471] (aruco_publisher) StdoutLine: {'line': b'running install_lib\n'}
+[8.571333] (distance_node) StdoutLine: {'line': b"reading manifest file '../../build/distance_node/distance_node.egg-info/SOURCES.txt'\n"}
+[8.572374] (aruco_publisher) StdoutLine: {'line': b'running install_data\n'}
+[8.574916] (aruco_publisher) StdoutLine: {'line': b'running install_egg_info\n'}
+[8.576516] (main_package_robot) StdoutLine: {'line': b'running egg_info\n'}
+[8.577583] (distance_node) StdoutLine: {'line': b"writing manifest file '../../build/distance_node/distance_node.egg-info/SOURCES.txt'\n"}
+[8.578439] (distance_node) StdoutLine: {'line': b'running build\n'}
+[8.578981] (distance_node) StdoutLine: {'line': b'running build_py\n'}
+[8.580660] (main_package_robot) StdoutLine: {'line': b'writing ../../build/main_package_robot/main_package_robot.egg-info/PKG-INFO\n'}
+[8.581726] (distance_node) StdoutLine: {'line': b'running install\n'}
+[8.582728] (distance_node) StderrLine: {'line': b'/usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.\n'}
+[8.583573] (distance_node) StderrLine: {'line': b'  warnings.warn(\n'}
+[8.586654] (-) TimerEvent: {}
+[8.587205] (main_package_robot) StdoutLine: {'line': b'writing dependency_links to ../../build/main_package_robot/main_package_robot.egg-info/dependency_links.txt\n'}
+[8.587886] (main_package_robot) StdoutLine: {'line': b'writing entry points to ../../build/main_package_robot/main_package_robot.egg-info/entry_points.txt\n'}
+[8.588454] (aruco_publisher) StdoutLine: {'line': b"removing '/home/pi/KSARMecanum/install/aruco_publisher/lib/python3.10/site-packages/aruco_publisher-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[8.589145] (distance_node) StdoutLine: {'line': b'running install_lib\n'}
+[8.589828] (main_package_robot) StdoutLine: {'line': b'writing requirements to ../../build/main_package_robot/main_package_robot.egg-info/requires.txt\n'}
+[8.590305] (main_package_robot) StdoutLine: {'line': b'writing top-level names to ../../build/main_package_robot/main_package_robot.egg-info/top_level.txt\n'}
+[8.590741] (aruco_publisher) StdoutLine: {'line': b'Copying ../../build/aruco_publisher/aruco_publisher.egg-info to /home/pi/KSARMecanum/install/aruco_publisher/lib/python3.10/site-packages/aruco_publisher-0.0.0-py3.10.egg-info\n'}
+[8.599860] (distance_node) StdoutLine: {'line': b'running install_data\n'}
+[8.600807] (aruco_publisher) StdoutLine: {'line': b'running install_scripts\n'}
+[8.601534] (distance_node) StdoutLine: {'line': b'running install_egg_info\n'}
+[8.602984] (main_package_robot) StdoutLine: {'line': b"reading manifest file '../../build/main_package_robot/main_package_robot.egg-info/SOURCES.txt'\n"}
+[8.603924] (main_package_robot) StdoutLine: {'line': b"writing manifest file '../../build/main_package_robot/main_package_robot.egg-info/SOURCES.txt'\n"}
+[8.604721] (main_package_robot) StdoutLine: {'line': b'running build\n'}
+[8.605388] (main_package_robot) StdoutLine: {'line': b'running build_py\n'}
+[8.606028] (main_package_robot) StdoutLine: {'line': b'copying main_package_robot/main_node.py -> /home/pi/KSARMecanum/build/main_package_robot/build/lib/main_package_robot\n'}
+[8.609335] (main_package_robot) StdoutLine: {'line': b'running install\n'}
+[8.609933] (distance_node) StdoutLine: {'line': b"removing '/home/pi/KSARMecanum/install/distance_node/lib/python3.10/site-packages/distance_node-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[8.610496] (main_package_robot) StderrLine: {'line': b'/usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.\n'}
+[8.611466] (main_package_robot) StderrLine: {'line': b'  warnings.warn(\n'}
+[8.611986] (main_package_robot) StdoutLine: {'line': b'running install_lib\n'}
+[8.612414] (distance_node) StdoutLine: {'line': b'Copying ../../build/distance_node/distance_node.egg-info to /home/pi/KSARMecanum/install/distance_node/lib/python3.10/site-packages/distance_node-0.0.0-py3.10.egg-info\n'}
+[8.617359] (main_package_robot) StdoutLine: {'line': b'copying /home/pi/KSARMecanum/build/main_package_robot/build/lib/main_package_robot/main_node.py -> /home/pi/KSARMecanum/install/main_package_robot/lib/python3.10/site-packages/main_package_robot\n'}
+[8.618284] (main_package_robot) StdoutLine: {'line': b'byte-compiling /home/pi/KSARMecanum/install/main_package_robot/lib/python3.10/site-packages/main_package_robot/main_node.py to main_node.cpython-310.pyc\n'}
+[8.618872] (distance_node) StdoutLine: {'line': b'running install_scripts\n'}
+[8.623859] (main_package_robot) StdoutLine: {'line': b'running install_data\n'}
+[8.624886] (main_package_robot) StdoutLine: {'line': b'running install_egg_info\n'}
+[8.634765] (main_package_robot) StdoutLine: {'line': b"removing '/home/pi/KSARMecanum/install/main_package_robot/lib/python3.10/site-packages/main_package_robot-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[8.637426] (main_package_robot) StdoutLine: {'line': b'Copying ../../build/main_package_robot/main_package_robot.egg-info to /home/pi/KSARMecanum/install/main_package_robot/lib/python3.10/site-packages/main_package_robot-0.0.0-py3.10.egg-info\n'}
+[8.646792] (main_package_robot) StdoutLine: {'line': b'running install_scripts\n'}
+[8.684154] (motor_control_node) StdoutLine: {'line': b'running egg_info\n'}
+[8.687041] (-) TimerEvent: {}
+[8.693174] (motor_control_node) StdoutLine: {'line': b'writing ../../build/motor_control_node/motor_control_node.egg-info/PKG-INFO\n'}
+[8.696750] (motor_control_node) StdoutLine: {'line': b'writing dependency_links to ../../build/motor_control_node/motor_control_node.egg-info/dependency_links.txt\n'}
+[8.699577] (motor_control_node) StdoutLine: {'line': b'writing entry points to ../../build/motor_control_node/motor_control_node.egg-info/entry_points.txt\n'}
+[8.701852] (motor_control_node) StdoutLine: {'line': b'writing requirements to ../../build/motor_control_node/motor_control_node.egg-info/requires.txt\n'}
+[8.704148] (motor_control_node) StdoutLine: {'line': b'writing top-level names to ../../build/motor_control_node/motor_control_node.egg-info/top_level.txt\n'}
+[8.708783] (aruco_publisher) StdoutLine: {'line': b'Installing ARUCO1 script to /home/pi/KSARMecanum/install/aruco_publisher/lib/aruco_publisher\n'}
+[8.711384] (aruco_publisher) StdoutLine: {'line': b"writing list of installed files to '/home/pi/KSARMecanum/build/aruco_publisher/install.log'\n"}
+[8.726527] (motor_control_node) StdoutLine: {'line': b"reading manifest file '../../build/motor_control_node/motor_control_node.egg-info/SOURCES.txt'\n"}
+[8.737958] (motor_control_node) StdoutLine: {'line': b"writing manifest file '../../build/motor_control_node/motor_control_node.egg-info/SOURCES.txt'\n"}
+[8.741605] (motor_control_node) StdoutLine: {'line': b'running build\n'}
+[8.743963] (motor_control_node) StdoutLine: {'line': b'running build_py\n'}
+[8.748750] (motor_control_node) StdoutLine: {'line': b'running install\n'}
+[8.749767] (distance_node) StdoutLine: {'line': b'Installing distance_publisher script to /home/pi/KSARMecanum/install/distance_node/lib/distance_node\n'}
+[8.753090] (distance_node) StdoutLine: {'line': b"writing list of installed files to '/home/pi/KSARMecanum/build/distance_node/install.log'\n"}
+[8.756393] (motor_control_node) StderrLine: {'line': b'/usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.\n'}
+[8.760189] (motor_control_node) StderrLine: {'line': b'  warnings.warn(\n'}
+[8.766806] (motor_control_node) StdoutLine: {'line': b'running install_lib\n'}
+[8.786646] (motor_control_node) StdoutLine: {'line': b'running install_data\n'}
+[8.788949] (-) TimerEvent: {}
+[8.797233] (motor_control_node) StdoutLine: {'line': b'running install_egg_info\n'}
+[8.806298] (main_package_robot) StdoutLine: {'line': b'Installing main_node script to /home/pi/KSARMecanum/install/main_package_robot/lib/main_package_robot\n'}
+[8.812004] (main_package_robot) StdoutLine: {'line': b"writing list of installed files to '/home/pi/KSARMecanum/build/main_package_robot/install.log'\n"}
+[8.827776] (motor_control_node) StdoutLine: {'line': b"removing '/home/pi/KSARMecanum/install/motor_control_node/lib/python3.10/site-packages/motor_control_node-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[8.840070] (motor_control_node) StdoutLine: {'line': b'Copying ../../build/motor_control_node/motor_control_node.egg-info to /home/pi/KSARMecanum/install/motor_control_node/lib/python3.10/site-packages/motor_control_node-0.0.0-py3.10.egg-info\n'}
+[8.870366] (motor_control_node) StdoutLine: {'line': b'running install_scripts\n'}
+[8.889475] (-) TimerEvent: {}
+[8.993501] (aruco_publisher) CommandEnded: {'returncode': 0}
+[8.996931] (-) TimerEvent: {}
+[9.070276] (motor_control_node) StdoutLine: {'line': b'Installing motor_control script to /home/pi/KSARMecanum/install/motor_control_node/lib/motor_control_node\n'}
+[9.082393] (motor_control_node) StdoutLine: {'line': b"writing list of installed files to '/home/pi/KSARMecanum/build/motor_control_node/install.log'\n"}
+[9.097974] (-) TimerEvent: {}
+[9.115541] (aruco_publisher) JobEnded: {'identifier': 'aruco_publisher', 'rc': 0}
+[9.130294] (opencv_pub) JobStarted: {'identifier': 'opencv_pub'}
+[9.194127] (distance_node) CommandEnded: {'returncode': 0}
+[9.202286] (-) TimerEvent: {}
+[9.240353] (distance_node) JobEnded: {'identifier': 'distance_node', 'rc': 0}
+[9.245115] (main_package_robot) CommandEnded: {'returncode': 0}
+[9.278539] (main_package_robot) JobEnded: {'identifier': 'main_package_robot', 'rc': 0}
+[9.302454] (-) TimerEvent: {}
+[9.403078] (-) TimerEvent: {}
+[9.503804] (-) TimerEvent: {}
+[9.604466] (-) TimerEvent: {}
+[9.705125] (-) TimerEvent: {}
+[9.805701] (-) TimerEvent: {}
+[9.906279] (-) TimerEvent: {}
+[10.006851] (-) TimerEvent: {}
+[10.107436] (-) TimerEvent: {}
+[10.208146] (-) TimerEvent: {}
+[10.308890] (-) TimerEvent: {}
+[10.408574] (motor_control_node) CommandEnded: {'returncode': 0}
+[10.413227] (-) TimerEvent: {}
+[10.446492] (motor_control_node) JobEnded: {'identifier': 'motor_control_node', 'rc': 0}
+[10.513421] (-) TimerEvent: {}
+[10.614039] (-) TimerEvent: {}
+[10.714693] (-) TimerEvent: {}
+[10.815365] (-) TimerEvent: {}
+[10.916020] (-) TimerEvent: {}
+[11.016606] (-) TimerEvent: {}
+[11.117206] (-) TimerEvent: {}
+[11.217813] (-) TimerEvent: {}
+[11.318434] (-) TimerEvent: {}
+[11.419006] (-) TimerEvent: {}
+[11.519598] (-) TimerEvent: {}
+[11.620414] (-) TimerEvent: {}
+[11.721413] (-) TimerEvent: {}
+[11.826743] (opencv_pub) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'egg_info', '--egg-base', '../../build/opencv_pub', 'build', '--build-base', '/home/pi/KSARMecanum/build/opencv_pub/build', 'install', '--record', '/home/pi/KSARMecanum/build/opencv_pub/install.log', '--single-version-externally-managed'], 'cwd': '/home/pi/KSARMecanum/src/opencv_pub', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'pi', 'SSH_CLIENT': '192.168.0.16 52770 22', 'LC_TIME': 'ru_RU.UTF-8', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib', 'MOTD_SHOWN': 'pam', 'HOME': '/home/pi', 'OLDPWD': '/home/pi', 'SSH_TTY': '/dev/pts/0', 'ROS_PYTHON_VERSION': '3', 'LC_MONETARY': 'ru_RU.UTF-8', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLCON_PREFIX_PATH': '/home/pi/KSARMecanum/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'pi', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '4', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/home/pi/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'LC_ADDRESS': 'ru_RU.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'LANG': 'en_US.UTF-8', 'LC_TELEPHONE': 'ru_RU.UTF-8', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/home/pi/KSARMecanum/install/opencv_pub:/home/pi/KSARMecanum/install/motor_control_node:/home/pi/KSARMecanum/install/main_package_robot:/home/pi/KSARMecanum/install/distance_node:/home/pi/KSARMecanum/install/aruco_publisher:/opt/ros/humble', 'SHELL': '/bin/bash', 'LC_NAME': 'ru_RU.UTF-8', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'ru_RU.UTF-8', 'LC_IDENTIFICATION': 'ru_RU.UTF-8', 'PWD': '/home/pi/KSARMecanum/build/opencv_pub', 'LC_ALL': 'en_US.UTF-8', 'SSH_CONNECTION': '192.168.0.16 52770 192.168.0.18 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/pi/KSARMecanum/build/opencv_pub/prefix_override:/home/pi/KSARMecanum/install/opencv_pub/lib/python3.10/site-packages:/home/pi/KSARMecanum/install/opencv_pub/lib/python3.10/site-packages:/home/pi/KSARMecanum/install/motor_control_node/lib/python3.10/site-packages:/home/pi/KSARMecanum/install/main_package_robot/lib/python3.10/site-packages:/home/pi/KSARMecanum/install/distance_node/lib/python3.10/site-packages:/home/pi/KSARMecanum/install/aruco_publisher/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'LC_NUMERIC': 'ru_RU.UTF-8', 'LC_PAPER': 'ru_RU.UTF-8', 'COLCON': '1'}, 'shell': False}
+[11.830818] (-) TimerEvent: {}
+[11.931376] (-) TimerEvent: {}
+[12.031996] (-) TimerEvent: {}
+[12.132646] (-) TimerEvent: {}
+[12.233291] (-) TimerEvent: {}
+[12.333896] (-) TimerEvent: {}
+[12.434511] (-) TimerEvent: {}
+[12.535100] (-) TimerEvent: {}
+[12.635758] (-) TimerEvent: {}
+[12.736460] (-) TimerEvent: {}
+[12.828064] (opencv_pub) StdoutLine: {'line': b'running egg_info\n'}
+[12.830701] (opencv_pub) StdoutLine: {'line': b'writing ../../build/opencv_pub/opencv_pub.egg-info/PKG-INFO\n'}
+[12.831780] (opencv_pub) StdoutLine: {'line': b'writing dependency_links to ../../build/opencv_pub/opencv_pub.egg-info/dependency_links.txt\n'}
+[12.832711] (opencv_pub) StdoutLine: {'line': b'writing entry points to ../../build/opencv_pub/opencv_pub.egg-info/entry_points.txt\n'}
+[12.833405] (opencv_pub) StdoutLine: {'line': b'writing requirements to ../../build/opencv_pub/opencv_pub.egg-info/requires.txt\n'}
+[12.834175] (opencv_pub) StdoutLine: {'line': b'writing top-level names to ../../build/opencv_pub/opencv_pub.egg-info/top_level.txt\n'}
+[12.836568] (-) TimerEvent: {}
+[12.842315] (opencv_pub) StdoutLine: {'line': b"reading manifest file '../../build/opencv_pub/opencv_pub.egg-info/SOURCES.txt'\n"}
+[12.845789] (opencv_pub) StdoutLine: {'line': b"writing manifest file '../../build/opencv_pub/opencv_pub.egg-info/SOURCES.txt'\n"}
+[12.846400] (opencv_pub) StdoutLine: {'line': b'running build\n'}
+[12.846862] (opencv_pub) StdoutLine: {'line': b'running build_py\n'}
+[12.847934] (opencv_pub) StdoutLine: {'line': b'running install\n'}
+[12.848637] (opencv_pub) StderrLine: {'line': b'/usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.\n'}
+[12.849116] (opencv_pub) StderrLine: {'line': b'  warnings.warn(\n'}
+[12.849701] (opencv_pub) StdoutLine: {'line': b'running install_lib\n'}
+[12.854787] (opencv_pub) StdoutLine: {'line': b'running install_data\n'}
+[12.857031] (opencv_pub) StdoutLine: {'line': b'running install_egg_info\n'}
+[12.863250] (opencv_pub) StdoutLine: {'line': b"removing '/home/pi/KSARMecanum/install/opencv_pub/lib/python3.10/site-packages/opencv_pub-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[12.864879] (opencv_pub) StdoutLine: {'line': b'Copying ../../build/opencv_pub/opencv_pub.egg-info to /home/pi/KSARMecanum/install/opencv_pub/lib/python3.10/site-packages/opencv_pub-0.0.0-py3.10.egg-info\n'}
+[12.869694] (opencv_pub) StdoutLine: {'line': b'running install_scripts\n'}
+[12.936708] (-) TimerEvent: {}
+[12.948582] (opencv_pub) StdoutLine: {'line': b'Installing CAM script to /home/pi/KSARMecanum/install/opencv_pub/lib/opencv_pub\n'}
+[12.950175] (opencv_pub) StdoutLine: {'line': b"writing list of installed files to '/home/pi/KSARMecanum/build/opencv_pub/install.log'\n"}
+[13.037010] (-) TimerEvent: {}
+[13.068903] (opencv_pub) CommandEnded: {'returncode': 0}
+[13.105572] (opencv_pub) JobEnded: {'identifier': 'opencv_pub', 'rc': 0}
+[13.108805] (-) EventReactorShutdown: {}

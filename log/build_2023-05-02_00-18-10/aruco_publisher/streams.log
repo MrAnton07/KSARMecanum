@@ -1,0 +1,26 @@
+[7.969s] Invoking command in '/home/pi/KSARMecanum/src/aruco_publisher': PYTHONPATH=/home/pi/KSARMecanum/build/aruco_publisher/prefix_override:/home/pi/KSARMecanum/install/aruco_publisher/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/aruco_publisher build --build-base /home/pi/KSARMecanum/build/aruco_publisher/build install --record /home/pi/KSARMecanum/build/aruco_publisher/install.log --single-version-externally-managed
+[9.499s] running egg_info
+[9.502s] writing ../../build/aruco_publisher/aruco_publisher.egg-info/PKG-INFO
+[9.505s] writing dependency_links to ../../build/aruco_publisher/aruco_publisher.egg-info/dependency_links.txt
+[9.508s] writing entry points to ../../build/aruco_publisher/aruco_publisher.egg-info/entry_points.txt
+[9.510s] writing requirements to ../../build/aruco_publisher/aruco_publisher.egg-info/requires.txt
+[9.513s] writing top-level names to ../../build/aruco_publisher/aruco_publisher.egg-info/top_level.txt
+[9.535s] reading manifest file '../../build/aruco_publisher/aruco_publisher.egg-info/SOURCES.txt'
+[9.542s] writing manifest file '../../build/aruco_publisher/aruco_publisher.egg-info/SOURCES.txt'
+[9.543s] running build
+[9.545s] running build_py
+[9.552s] copying aruco_publisher/aruco_detector.py -> /home/pi/KSARMecanum/build/aruco_publisher/build/lib/aruco_publisher
+[9.555s] running install
+[9.557s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[9.558s]   warnings.warn(
+[9.559s] running install_lib
+[9.570s] copying /home/pi/KSARMecanum/build/aruco_publisher/build/lib/aruco_publisher/aruco_detector.py -> /home/pi/KSARMecanum/install/aruco_publisher/lib/python3.10/site-packages/aruco_publisher
+[9.576s] byte-compiling /home/pi/KSARMecanum/install/aruco_publisher/lib/python3.10/site-packages/aruco_publisher/aruco_detector.py to aruco_detector.cpython-310.pyc
+[9.578s] running install_data
+[9.584s] running install_egg_info
+[9.596s] removing '/home/pi/KSARMecanum/install/aruco_publisher/lib/python3.10/site-packages/aruco_publisher-0.0.0-py3.10.egg-info' (and everything under it)
+[9.598s] Copying ../../build/aruco_publisher/aruco_publisher.egg-info to /home/pi/KSARMecanum/install/aruco_publisher/lib/python3.10/site-packages/aruco_publisher-0.0.0-py3.10.egg-info
+[9.608s] running install_scripts
+[9.729s] Installing ARUCO1 script to /home/pi/KSARMecanum/install/aruco_publisher/lib/aruco_publisher
+[9.734s] writing list of installed files to '/home/pi/KSARMecanum/build/aruco_publisher/install.log'
+[10.062s] Invoked command in '/home/pi/KSARMecanum/src/aruco_publisher' returned '0': PYTHONPATH=/home/pi/KSARMecanum/build/aruco_publisher/prefix_override:/home/pi/KSARMecanum/install/aruco_publisher/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/aruco_publisher build --build-base /home/pi/KSARMecanum/build/aruco_publisher/build install --record /home/pi/KSARMecanum/build/aruco_publisher/install.log --single-version-externally-managed

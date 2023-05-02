@@ -1,0 +1,39 @@
+[6.863s] Invoking command in '/home/pi/KSARMecanum/src/distance_node': PYTHONPATH=/home/pi/KSARMecanum/build/distance_node/prefix_override:/home/pi/KSARMecanum/install/distance_node/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/distance_node build --build-base /home/pi/KSARMecanum/build/distance_node/build install --record /home/pi/KSARMecanum/build/distance_node/install.log --single-version-externally-managed
+[8.347s] running egg_info
+[8.349s] creating ../../build/distance_node/distance_node.egg-info
+[8.349s] writing ../../build/distance_node/distance_node.egg-info/PKG-INFO
+[8.358s] writing dependency_links to ../../build/distance_node/distance_node.egg-info/dependency_links.txt
+[8.371s] writing entry points to ../../build/distance_node/distance_node.egg-info/entry_points.txt
+[8.373s] writing requirements to ../../build/distance_node/distance_node.egg-info/requires.txt
+[8.375s] writing top-level names to ../../build/distance_node/distance_node.egg-info/top_level.txt
+[8.376s] writing manifest file '../../build/distance_node/distance_node.egg-info/SOURCES.txt'
+[8.406s] reading manifest file '../../build/distance_node/distance_node.egg-info/SOURCES.txt'
+[8.411s] writing manifest file '../../build/distance_node/distance_node.egg-info/SOURCES.txt'
+[8.415s] running build
+[8.415s] running build_py
+[8.416s] creating /home/pi/KSARMecanum/build/distance_node/build
+[8.416s] creating /home/pi/KSARMecanum/build/distance_node/build/lib
+[8.431s] creating /home/pi/KSARMecanum/build/distance_node/build/lib/distance_node
+[8.446s] copying distance_node/__init__.py -> /home/pi/KSARMecanum/build/distance_node/build/lib/distance_node
+[8.447s] copying distance_node/distance_publisher.py -> /home/pi/KSARMecanum/build/distance_node/build/lib/distance_node
+[8.448s] running install
+[8.448s] running install_lib
+[8.449s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[8.449s]   warnings.warn(
+[8.464s] creating /home/pi/KSARMecanum/install/distance_node/lib/python3.10/site-packages/distance_node
+[8.465s] copying /home/pi/KSARMecanum/build/distance_node/build/lib/distance_node/__init__.py -> /home/pi/KSARMecanum/install/distance_node/lib/python3.10/site-packages/distance_node
+[8.466s] copying /home/pi/KSARMecanum/build/distance_node/build/lib/distance_node/distance_publisher.py -> /home/pi/KSARMecanum/install/distance_node/lib/python3.10/site-packages/distance_node
+[8.477s] byte-compiling /home/pi/KSARMecanum/install/distance_node/lib/python3.10/site-packages/distance_node/__init__.py to __init__.cpython-310.pyc
+[8.480s] byte-compiling /home/pi/KSARMecanum/install/distance_node/lib/python3.10/site-packages/distance_node/distance_publisher.py to distance_publisher.cpython-310.pyc
+[8.483s] running install_data
+[8.483s] creating /home/pi/KSARMecanum/install/distance_node/share/ament_index
+[8.484s] creating /home/pi/KSARMecanum/install/distance_node/share/ament_index/resource_index
+[8.484s] creating /home/pi/KSARMecanum/install/distance_node/share/ament_index/resource_index/packages
+[8.485s] copying resource/distance_node -> /home/pi/KSARMecanum/install/distance_node/share/ament_index/resource_index/packages
+[8.485s] copying package.xml -> /home/pi/KSARMecanum/install/distance_node/share/distance_node
+[8.493s] running install_egg_info
+[8.496s] Copying ../../build/distance_node/distance_node.egg-info to /home/pi/KSARMecanum/install/distance_node/lib/python3.10/site-packages/distance_node-0.0.0-py3.10.egg-info
+[8.530s] running install_scripts
+[8.664s] Installing distance_publisher script to /home/pi/KSARMecanum/install/distance_node/lib/distance_node
+[8.668s] writing list of installed files to '/home/pi/KSARMecanum/build/distance_node/install.log'
+[9.014s] Invoked command in '/home/pi/KSARMecanum/src/distance_node' returned '0': PYTHONPATH=/home/pi/KSARMecanum/build/distance_node/prefix_override:/home/pi/KSARMecanum/install/distance_node/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/distance_node build --build-base /home/pi/KSARMecanum/build/distance_node/build install --record /home/pi/KSARMecanum/build/distance_node/install.log --single-version-externally-managed

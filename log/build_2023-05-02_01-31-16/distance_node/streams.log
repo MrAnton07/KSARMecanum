@@ -1,0 +1,23 @@
+[6.974s] Invoking command in '/home/pi/KSARMecanum/src/distance_node': PYTHONPATH=/home/pi/KSARMecanum/build/distance_node/prefix_override:/home/pi/KSARMecanum/install/distance_node/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/distance_node build --build-base /home/pi/KSARMecanum/build/distance_node/build install --record /home/pi/KSARMecanum/build/distance_node/install.log --single-version-externally-managed
+[8.497s] running egg_info
+[8.501s] writing ../../build/distance_node/distance_node.egg-info/PKG-INFO
+[8.503s] writing dependency_links to ../../build/distance_node/distance_node.egg-info/dependency_links.txt
+[8.506s] writing entry points to ../../build/distance_node/distance_node.egg-info/entry_points.txt
+[8.506s] writing requirements to ../../build/distance_node/distance_node.egg-info/requires.txt
+[8.509s] writing top-level names to ../../build/distance_node/distance_node.egg-info/top_level.txt
+[8.517s] reading manifest file '../../build/distance_node/distance_node.egg-info/SOURCES.txt'
+[8.522s] writing manifest file '../../build/distance_node/distance_node.egg-info/SOURCES.txt'
+[8.523s] running build
+[8.524s] running build_py
+[8.527s] running install
+[8.528s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[8.531s]   warnings.warn(
+[8.534s] running install_lib
+[8.545s] running install_data
+[8.547s] running install_egg_info
+[8.555s] removing '/home/pi/KSARMecanum/install/distance_node/lib/python3.10/site-packages/distance_node-0.0.0-py3.10.egg-info' (and everything under it)
+[8.562s] Copying ../../build/distance_node/distance_node.egg-info to /home/pi/KSARMecanum/install/distance_node/lib/python3.10/site-packages/distance_node-0.0.0-py3.10.egg-info
+[8.564s] running install_scripts
+[8.695s] Installing distance_publisher script to /home/pi/KSARMecanum/install/distance_node/lib/distance_node
+[8.698s] writing list of installed files to '/home/pi/KSARMecanum/build/distance_node/install.log'
+[9.146s] Invoked command in '/home/pi/KSARMecanum/src/distance_node' returned '0': PYTHONPATH=/home/pi/KSARMecanum/build/distance_node/prefix_override:/home/pi/KSARMecanum/install/distance_node/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/distance_node build --build-base /home/pi/KSARMecanum/build/distance_node/build install --record /home/pi/KSARMecanum/build/distance_node/install.log --single-version-externally-managed

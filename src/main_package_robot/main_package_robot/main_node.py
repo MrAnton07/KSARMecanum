@@ -6,7 +6,8 @@ from std_msgs.msg import Int32MultiArray
 
 class MainAlg(Node):
     __flag = 1
-
+    __integral = 0
+    __prevErr = 0
     def __init__(self):
 
         super().__init__('MainAlg')
@@ -25,6 +26,15 @@ class MainAlg(Node):
             self.aruco_callback,
             10)
 
+#    def PID(self, input, setpoint, kp, ki, kd, dt, minOut, maxOut):
+#        err = setpoint - input;
+#        self.__integral = constrain(integral + (float)err*dt*ki, minOut, maxOut)
+#        D = (err - self.__prevErr)/dt
+#        self.__prevErr = err
+#        return constrain(err*kp+self.__integral+D*kd, minOut, maxOut);
+#
+#    def constrain(val, min_val, max_val):
+#        return min(max_val, max(min_val, val))
 
 
     def motor_publisher(self, speed, mode):
@@ -51,11 +61,13 @@ class MainAlg(Node):
                 if msg.data[0] == 0  or msg.data[0] == 2:
                     dist_mark = msg.data[1]
                     if dist_mark <-15:
-                        self.motor_publisher(10,3)
+                        self.motor_publisher(abs(int(dist_mark/10)),3)
                     elif dist_mark >15:
-                        self.motor_publisher(10,4)
+                        self.motor_publisher(abs(int(dist_mark/10)),4)
                     else:
-                        self.motor_publisher(10,1)    
+                        self.motor_publisher(0,0)
+                else:
+                    self.motor_publisher(0,0) 
         if self.__flag == 2:
             pass
         if self.__flag == 3:
