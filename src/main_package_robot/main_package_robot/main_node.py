@@ -50,8 +50,12 @@ class MainAlg(Node):
         ################################################################# 3 Flag #################################################################
         if (self.__flag == 3):
             self.motor_publisher(6, 5)
+            if abs(self.AruCo[1]) > 30:
+                self.__flag = 2
+                return
             if self.distance[0] > 30:
                 self.servo_publisher(1)
+                self.motor_publisher(0, 0)
 
 
 
