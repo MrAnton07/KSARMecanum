@@ -1,0 +1,39 @@
+[2.563s] Invoking command in '/home/pi/KSARMecanum/src/opencv_pub': PYTHONPATH=/home/pi/KSARMecanum/build/opencv_pub/prefix_override:/home/pi/KSARMecanum/install/opencv_pub/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/opencv_pub build --build-base /home/pi/KSARMecanum/build/opencv_pub/build install --record /home/pi/KSARMecanum/build/opencv_pub/install.log --single-version-externally-managed
+[3.532s] running egg_info
+[3.534s] creating ../../build/opencv_pub/opencv_pub.egg-info
+[3.535s] writing ../../build/opencv_pub/opencv_pub.egg-info/PKG-INFO
+[3.536s] writing dependency_links to ../../build/opencv_pub/opencv_pub.egg-info/dependency_links.txt
+[3.536s] writing entry points to ../../build/opencv_pub/opencv_pub.egg-info/entry_points.txt
+[3.537s] writing requirements to ../../build/opencv_pub/opencv_pub.egg-info/requires.txt
+[3.537s] writing top-level names to ../../build/opencv_pub/opencv_pub.egg-info/top_level.txt
+[3.538s] writing manifest file '../../build/opencv_pub/opencv_pub.egg-info/SOURCES.txt'
+[3.545s] reading manifest file '../../build/opencv_pub/opencv_pub.egg-info/SOURCES.txt'
+[3.548s] writing manifest file '../../build/opencv_pub/opencv_pub.egg-info/SOURCES.txt'
+[3.549s] running build
+[3.549s] running build_py
+[3.550s] creating /home/pi/KSARMecanum/build/opencv_pub/build
+[3.550s] creating /home/pi/KSARMecanum/build/opencv_pub/build/lib
+[3.551s] creating /home/pi/KSARMecanum/build/opencv_pub/build/lib/opencv_pub
+[3.551s] copying opencv_pub/__init__.py -> /home/pi/KSARMecanum/build/opencv_pub/build/lib/opencv_pub
+[3.551s] copying opencv_pub/camera_vision_publisher.py -> /home/pi/KSARMecanum/build/opencv_pub/build/lib/opencv_pub
+[3.552s] running install
+[3.553s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[3.553s]   warnings.warn(
+[3.554s] running install_lib
+[3.557s] creating /home/pi/KSARMecanum/install/opencv_pub/lib/python3.10/site-packages/opencv_pub
+[3.557s] copying /home/pi/KSARMecanum/build/opencv_pub/build/lib/opencv_pub/__init__.py -> /home/pi/KSARMecanum/install/opencv_pub/lib/python3.10/site-packages/opencv_pub
+[3.558s] copying /home/pi/KSARMecanum/build/opencv_pub/build/lib/opencv_pub/camera_vision_publisher.py -> /home/pi/KSARMecanum/install/opencv_pub/lib/python3.10/site-packages/opencv_pub
+[3.560s] byte-compiling /home/pi/KSARMecanum/install/opencv_pub/lib/python3.10/site-packages/opencv_pub/__init__.py to __init__.cpython-310.pyc
+[3.562s] byte-compiling /home/pi/KSARMecanum/install/opencv_pub/lib/python3.10/site-packages/opencv_pub/camera_vision_publisher.py to camera_vision_publisher.cpython-310.pyc
+[3.564s] running install_data
+[3.566s] creating /home/pi/KSARMecanum/install/opencv_pub/share/ament_index
+[3.566s] creating /home/pi/KSARMecanum/install/opencv_pub/share/ament_index/resource_index
+[3.567s] creating /home/pi/KSARMecanum/install/opencv_pub/share/ament_index/resource_index/packages
+[3.567s] copying resource/opencv_pub -> /home/pi/KSARMecanum/install/opencv_pub/share/ament_index/resource_index/packages
+[3.568s] copying package.xml -> /home/pi/KSARMecanum/install/opencv_pub/share/opencv_pub
+[3.568s] running install_egg_info
+[3.574s] Copying ../../build/opencv_pub/opencv_pub.egg-info to /home/pi/KSARMecanum/install/opencv_pub/lib/python3.10/site-packages/opencv_pub-0.0.0-py3.10.egg-info
+[3.579s] running install_scripts
+[3.655s] Installing CAM script to /home/pi/KSARMecanum/install/opencv_pub/lib/opencv_pub
+[3.657s] writing list of installed files to '/home/pi/KSARMecanum/build/opencv_pub/install.log'
+[3.779s] Invoked command in '/home/pi/KSARMecanum/src/opencv_pub' returned '0': PYTHONPATH=/home/pi/KSARMecanum/build/opencv_pub/prefix_override:/home/pi/KSARMecanum/install/opencv_pub/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/opencv_pub build --build-base /home/pi/KSARMecanum/build/opencv_pub/build install --record /home/pi/KSARMecanum/build/opencv_pub/install.log --single-version-externally-managed

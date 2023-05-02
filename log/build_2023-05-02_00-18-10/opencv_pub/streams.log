@@ -1,0 +1,23 @@
+[2.677s] Invoking command in '/home/pi/KSARMecanum/src/opencv_pub': PYTHONPATH=/home/pi/KSARMecanum/build/opencv_pub/prefix_override:/home/pi/KSARMecanum/install/opencv_pub/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/opencv_pub build --build-base /home/pi/KSARMecanum/build/opencv_pub/build install --record /home/pi/KSARMecanum/build/opencv_pub/install.log --single-version-externally-managed
+[3.675s] running egg_info
+[3.678s] writing ../../build/opencv_pub/opencv_pub.egg-info/PKG-INFO
+[3.680s] writing dependency_links to ../../build/opencv_pub/opencv_pub.egg-info/dependency_links.txt
+[3.681s] writing entry points to ../../build/opencv_pub/opencv_pub.egg-info/entry_points.txt
+[3.682s] writing requirements to ../../build/opencv_pub/opencv_pub.egg-info/requires.txt
+[3.682s] writing top-level names to ../../build/opencv_pub/opencv_pub.egg-info/top_level.txt
+[3.694s] reading manifest file '../../build/opencv_pub/opencv_pub.egg-info/SOURCES.txt'
+[3.698s] writing manifest file '../../build/opencv_pub/opencv_pub.egg-info/SOURCES.txt'
+[3.699s] running build
+[3.699s] running build_py
+[3.703s] running install
+[3.704s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[3.704s]   warnings.warn(
+[3.705s] running install_lib
+[3.712s] running install_data
+[3.715s] running install_egg_info
+[3.721s] removing '/home/pi/KSARMecanum/install/opencv_pub/lib/python3.10/site-packages/opencv_pub-0.0.0-py3.10.egg-info' (and everything under it)
+[3.723s] Copying ../../build/opencv_pub/opencv_pub.egg-info to /home/pi/KSARMecanum/install/opencv_pub/lib/python3.10/site-packages/opencv_pub-0.0.0-py3.10.egg-info
+[3.729s] running install_scripts
+[3.807s] Installing CAM script to /home/pi/KSARMecanum/install/opencv_pub/lib/opencv_pub
+[3.810s] writing list of installed files to '/home/pi/KSARMecanum/build/opencv_pub/install.log'
+[3.931s] Invoked command in '/home/pi/KSARMecanum/src/opencv_pub' returned '0': PYTHONPATH=/home/pi/KSARMecanum/build/opencv_pub/prefix_override:/home/pi/KSARMecanum/install/opencv_pub/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/opencv_pub build --build-base /home/pi/KSARMecanum/build/opencv_pub/build install --record /home/pi/KSARMecanum/build/opencv_pub/install.log --single-version-externally-managed

@@ -1,0 +1,23 @@
+[6.901s] Invoking command in '/home/pi/KSARMecanum/src/motor_control_node': PYTHONPATH=/home/pi/KSARMecanum/build/motor_control_node/prefix_override:/home/pi/KSARMecanum/install/motor_control_node/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/motor_control_node build --build-base /home/pi/KSARMecanum/build/motor_control_node/build install --record /home/pi/KSARMecanum/build/motor_control_node/install.log --single-version-externally-managed
+[8.525s] running egg_info
+[8.531s] writing ../../build/motor_control_node/motor_control_node.egg-info/PKG-INFO
+[8.533s] writing dependency_links to ../../build/motor_control_node/motor_control_node.egg-info/dependency_links.txt
+[8.537s] writing entry points to ../../build/motor_control_node/motor_control_node.egg-info/entry_points.txt
+[8.540s] writing requirements to ../../build/motor_control_node/motor_control_node.egg-info/requires.txt
+[8.541s] writing top-level names to ../../build/motor_control_node/motor_control_node.egg-info/top_level.txt
+[8.555s] reading manifest file '../../build/motor_control_node/motor_control_node.egg-info/SOURCES.txt'
+[8.561s] writing manifest file '../../build/motor_control_node/motor_control_node.egg-info/SOURCES.txt'
+[8.562s] running build
+[8.562s] running build_py
+[8.564s] running install
+[8.565s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[8.565s]   warnings.warn(
+[8.567s] running install_lib
+[8.574s] running install_data
+[8.579s] running install_egg_info
+[8.595s] removing '/home/pi/KSARMecanum/install/motor_control_node/lib/python3.10/site-packages/motor_control_node-0.0.0-py3.10.egg-info' (and everything under it)
+[8.599s] Copying ../../build/motor_control_node/motor_control_node.egg-info to /home/pi/KSARMecanum/install/motor_control_node/lib/python3.10/site-packages/motor_control_node-0.0.0-py3.10.egg-info
+[8.617s] running install_scripts
+[8.880s] Installing motor_control script to /home/pi/KSARMecanum/install/motor_control_node/lib/motor_control_node
+[8.883s] writing list of installed files to '/home/pi/KSARMecanum/build/motor_control_node/install.log'
+[9.150s] Invoked command in '/home/pi/KSARMecanum/src/motor_control_node' returned '0': PYTHONPATH=/home/pi/KSARMecanum/build/motor_control_node/prefix_override:/home/pi/KSARMecanum/install/motor_control_node/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/motor_control_node build --build-base /home/pi/KSARMecanum/build/motor_control_node/build install --record /home/pi/KSARMecanum/build/motor_control_node/install.log --single-version-externally-managed

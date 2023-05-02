@@ -1,0 +1,26 @@
+[6.898s] Invoking command in '/home/pi/KSARMecanum/src/main_package_robot': PYTHONPATH=/home/pi/KSARMecanum/build/main_package_robot/prefix_override:/home/pi/KSARMecanum/install/main_package_robot/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/main_package_robot build --build-base /home/pi/KSARMecanum/build/main_package_robot/build install --record /home/pi/KSARMecanum/build/main_package_robot/install.log --single-version-externally-managed
+[8.426s] running egg_info
+[8.430s] writing ../../build/main_package_robot/main_package_robot.egg-info/PKG-INFO
+[8.432s] writing dependency_links to ../../build/main_package_robot/main_package_robot.egg-info/dependency_links.txt
+[8.434s] writing entry points to ../../build/main_package_robot/main_package_robot.egg-info/entry_points.txt
+[8.435s] writing requirements to ../../build/main_package_robot/main_package_robot.egg-info/requires.txt
+[8.436s] writing top-level names to ../../build/main_package_robot/main_package_robot.egg-info/top_level.txt
+[8.449s] reading manifest file '../../build/main_package_robot/main_package_robot.egg-info/SOURCES.txt'
+[8.456s] writing manifest file '../../build/main_package_robot/main_package_robot.egg-info/SOURCES.txt'
+[8.457s] running build
+[8.459s] running build_py
+[8.463s] copying main_package_robot/main_node.py -> /home/pi/KSARMecanum/build/main_package_robot/build/lib/main_package_robot
+[8.464s] running install
+[8.470s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[8.470s]   warnings.warn(
+[8.471s] running install_lib
+[8.476s] copying /home/pi/KSARMecanum/build/main_package_robot/build/lib/main_package_robot/main_node.py -> /home/pi/KSARMecanum/install/main_package_robot/lib/python3.10/site-packages/main_package_robot
+[8.485s] byte-compiling /home/pi/KSARMecanum/install/main_package_robot/lib/python3.10/site-packages/main_package_robot/main_node.py to main_node.cpython-310.pyc
+[8.498s] running install_data
+[8.503s] running install_egg_info
+[8.504s] removing '/home/pi/KSARMecanum/install/main_package_robot/lib/python3.10/site-packages/main_package_robot-0.0.0-py3.10.egg-info' (and everything under it)
+[8.505s] Copying ../../build/main_package_robot/main_package_robot.egg-info to /home/pi/KSARMecanum/install/main_package_robot/lib/python3.10/site-packages/main_package_robot-0.0.0-py3.10.egg-info
+[8.507s] running install_scripts
+[8.629s] Installing main_node script to /home/pi/KSARMecanum/install/main_package_robot/lib/main_package_robot
+[8.637s] writing list of installed files to '/home/pi/KSARMecanum/build/main_package_robot/install.log'
+[9.094s] Invoked command in '/home/pi/KSARMecanum/src/main_package_robot' returned '0': PYTHONPATH=/home/pi/KSARMecanum/build/main_package_robot/prefix_override:/home/pi/KSARMecanum/install/main_package_robot/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/main_package_robot build --build-base /home/pi/KSARMecanum/build/main_package_robot/build install --record /home/pi/KSARMecanum/build/main_package_robot/install.log --single-version-externally-managed
