@@ -1,6 +1,7 @@
 import rclpy
 from rclpy.node import Node
 
+from time import sleep
 from std_msgs.msg import Int32
 from std_msgs.msg import Int32MultiArray
 from std_msgs.msg import String
@@ -56,6 +57,7 @@ class MainAlg(Node):
             if self.distance[0] > 30:
                 self.servo_publisher(1)
                 self.motor_publisher(0, 0)
+                se
 
 
 
@@ -80,6 +82,7 @@ class MainAlg(Node):
         self.color = msg.data
 
 def main(args=None):
+    sleep(5)
     rclpy.init(args=args)
 
     mainAlg = MainAlg()
