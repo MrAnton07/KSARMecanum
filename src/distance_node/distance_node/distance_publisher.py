@@ -13,7 +13,7 @@ class DistanceColorServo(Node):
         super().__init__('DistanceColorServo')
         self.distance_publisher_ = self.create_publisher(Int32MultiArray, 'distance_topic', 10)
         self.color_publisher_ = self.create_publisher(String, 'color_topic', 10)
-        self.servo_subscriber_ = self.create_subscription(Int32, 'servo_topic', self.servo_callback, 10)
+        self.servo_subscriber_ = self.create_subscription(Int32, 'servo_control_topic', self.servo_callback, 10)
         
         self.ser = serial.Serial('/dev/ttyUSB0', 57600, timeout=1)
         self.str_mess = ""
@@ -22,7 +22,6 @@ class DistanceColorServo(Node):
         self.timer_distance_color = self.create_timer(timer_period, self.timer_distance_color_callback)
 
     def timer_distance_color_callback(self):
-
         distance_msg = Int32MultiArray()
         color_msg = String()
         self.ser.write(b"1\n")

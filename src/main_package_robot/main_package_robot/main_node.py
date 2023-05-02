@@ -3,77 +3,77 @@ from rclpy.node import Node
 
 from std_msgs.msg import Int32
 from std_msgs.msg import Int32MultiArray
+from std_msgs.msg import String
 
 class MainAlg(Node):
     __flag = 1
-    __integral = 0
-    __prevErr = 0
+    distance = [0,0]
+    AruCo = [-1,-1]
+    color = "None"
+
     def __init__(self):
 
         super().__init__('MainAlg')
-        self.motor_pub = self.create_publisher(
-            Int32MultiArray,
-            'motor_control_topic',
-            10)
-        self.distance_sub = self.create_subscription(
-            Int32MultiArray,
-            'distance_topic',
-            self.distance_callback,
-            10)
-        self.aruco_sub = self.create_subscription(
-            Int32MultiArray,
-            'aruco_topic',
-            self.aruco_callback,
-            10)
+        self.motor_pub = self.create_publisher(Int32MultiArray, 'motor_control_topic', 10)
+        self.servo_pub = self.create_publisher(Int32, 'servo_control_topic', 10)
+        self.distance_sub = self.create_subscription(Int32MultiArray, 'distance_topic', self.distance_callback, 10)
+        self.color_sub = self.create_subscription(String, 'color_topic', self.color_callback, 10)
+        self.aruco_sub = self.create_subscription(Int32MultiArray, 'aruco_topic', self.aruco_callback, 10)
 
-#    def PID(self, input, setpoint, kp, ki, kd, dt, minOut, maxOut):
-#        err = setpoint - input;
-#        self.__integral = constrain(integral + (float)err*dt*ki, minOut, maxOut)
-#        D = (err - self.__prevErr)/dt
-#        self.__prevErr = err
-#        return constrain(err*kp+self.__integral+D*kd, minOut, maxOut);
-#
-#    def constrain(val, min_val, max_val):
-#        return min(max_val, max(min_val, val))
+        timer_period = 0.1  # seconds
+        self.algorithm_cycle = self.create_timer(timer_period, self.main_algorithm)
+
+    def main_algorithm(self):
+        ################################################################# 1 Flag #################################################################
+        if (self.__flag == 1):
+            if(80 > self.distance[1] > 70):
+                self.__flag = 2
+                return
+            self.motor_publisher(7, 4)
+
+        ################################################################# 2 Flag #################################################################
+        if (self.__flag == 2):
+            self.get_logger().info('I heard: "%d"' % self.AruCo[0])
+            if self.AruCo[0] == 0  or self.AruCo[0] == 2:
+    
+                if self.AruCo[1] <-15:
+                    self.motor_publisher(abs(int(self.AruCo[1]/10)),3)
+                elif self.AruCo[1] >15:
+                    self.motor_publisher(abs(int(self.AruCo[1]/10)),4)
+                else:
+                    self.motor_publisher(0,0)
+                    self.__flag = 3
+                    return
+            else:
+                self.motor_publisher(0,0)
+        
+        ################################################################# 3 Flag #################################################################
+        if (self.__flag == 3):
+            self.motor_publisher(6, 5)
+            if self.distance[0] > 30:
+                self.servo_publisher(1)
+
 
 
     def motor_publisher(self, speed, mode):
         msg = Int32MultiArray()
         msg.data = [speed, mode]
         self.motor_pub.publish(msg)
-        self.get_logger().info('Publish: "%d"' % mode)
+        self.get_logger().info('I HEARD: "%d"' % self.distance[0])
+
+    def servo_publisher(self, mode):
+        msg = Int32()
+        msg.data = mode
+        self.servo_pub.publish(msg)
         
     def distance_callback(self, msg):
-        if self.__flag == 1:
-            if len(msg.data) != 0:
-                self.get_logger().info('I heard: "%d"' % msg.data[0])
-                if msg.data[0] < 50:
-                    self.motor_publisher()
-        if self.__flag == 2:
-            pass
-        if self.__flag == 3:
-            pass
+        self.distance = msg.data
 
     def aruco_callback(self, msg):
-        if self.__flag == 1:
-            if len(msg.data) != 0:
-                self.get_logger().info('I heard: "%d"' % msg.data[0])
-                if msg.data[0] == 0  or msg.data[0] == 2:
-                    dist_mark = msg.data[1]
-                    if dist_mark <-15:
-                        self.motor_publisher(abs(int(dist_mark/10)),3)
-                    elif dist_mark >15:
-                        self.motor_publisher(abs(int(dist_mark/10)),4)
-                    else:
-                        self.motor_publisher(0,0)
-                else:
-                    self.motor_publisher(0,0) 
-        if self.__flag == 2:
-            pass
-        if self.__flag == 3:
-            pass
+        self.AruCo = msg.data
 
-
+    def color_callback(self, msg):
+        self.color = msg.data
 
 def main(args=None):
     rclpy.init(args=args)
