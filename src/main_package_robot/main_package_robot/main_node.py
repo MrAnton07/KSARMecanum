@@ -57,7 +57,6 @@ class MainAlg(Node):
             if self.distance[0] > 30:
                 self.servo_publisher(1)
                 self.motor_publisher(0, 0)
-                se
 
 
 

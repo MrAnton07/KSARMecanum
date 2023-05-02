@@ -16,6 +16,7 @@ class DistanceColorServo(Node):
         self.servo_subscriber_ = self.create_subscription(Int32, 'servo_control_topic', self.servo_callback, 10)
         
         self.ser = serial.Serial('/dev/ttyUSB0', 57600, timeout=1)
+        self.ser.flush()
         self.str_mess = ""
 
         timer_period = 0.1  # seconds
