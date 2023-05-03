@@ -77,9 +77,9 @@ class MainAlg(Node):
                 self.motor_publisher(0, 0)
                 self.__flag = 5
 
-    def CD_publisher(self):
+    def CD_publisher(self, servo_mess):
         msg = Int32()
-        msg.data = 1
+        msg.data = servo_mess
         self.distance_color_pub.publish(msg)
 
     def motor_publisher(self, speed, mode):

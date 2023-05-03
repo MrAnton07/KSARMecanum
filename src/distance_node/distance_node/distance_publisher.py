@@ -26,33 +26,34 @@ class DistanceColorServo(Node):
         # self.timer_distance_color = self.create_timer(timer_period, self.timer_distance_color_callback)
 
     def distance_color_callback(self, msg):
-        if(msg.data == 1):
-            distance_msg = Int32MultiArray()
-            color_msg = String()
-            self.ser.write(b"1\n")
-            self.ser.flush()
-            
-            if self.ser.in_waiting > 0:
-                self.str_mess = self.ser.readline().decode('utf-8').rstrip()
-                try:
-                    VarList = [int(x) for x in self.str_mess.split(',')]
-                except:
-                    self.ser.flush()
-                    return
+#        if(msg.data == 1):
+        distance_msg = Int32MultiArray()
+        color_msg = String()
+        self.ser.write(str(msg.data).encode())
+        self.ser.write(b"\n")
+        self.ser.flush()
+        
+        if self.ser.in_waiting > 0:
+            self.str_mess = self.ser.readline().decode('utf-8').rstrip()
+            try:
+                VarList = [int(x) for x in self.str_mess.split(',')]
+            except:
+                self.ser.flush()
+                return
 
-                distance_msg.data = VarList[:2]
-                self.distance_publisher_.publish(distance_msg)
-                if(VarList[-1] == 1):
-                    color_msg.data = "Red"
-                    self.color_publisher_.publish(color_msg)
-                elif(VarList[-1] == 2):
-                    color_msg.data = "Green"
-                    self.color_publisher_.publish(color_msg)
-                else:
-                    color_msg.data = "Blue"
-                    self.color_publisher_.publish(color_msg)
-                print(distance_msg.data)
-                self.get_logger().info('Publishing: "%s"' % color_msg.data)
+            distance_msg.data = VarList[:2]
+            self.distance_publisher_.publish(distance_msg)
+            if(VarList[-1] == 1):
+                color_msg.data = "Red"
+                self.color_publisher_.publish(color_msg)
+            elif(VarList[-1] == 2):
+                color_msg.data = "Green"
+                self.color_publisher_.publish(color_msg)
+            else:
+                color_msg.data = "Blue"
+                self.color_publisher_.publish(color_msg)
+            print(distance_msg.data)
+            self.get_logger().info('Publishing: "%s"' % color_msg.data)
     
     def servo_callback(self, msg):
         if (msg.data == 0):
