@@ -22,7 +22,7 @@ class MainAlg(Node):
         self.color_sub = self.create_subscription(String, 'color_topic', self.color_callback, 10)
         self.aruco_sub = self.create_subscription(Int32MultiArray, 'aruco_topic', self.aruco_callback, 10)
 
-        timer_period = 0.1  # seconds
+        timer_period = 0.1    # seconds
         self.algorithm_cycle = self.create_timer(timer_period, self.main_algorithm)
 
     def main_algorithm(self):
@@ -61,10 +61,11 @@ class MainAlg(Node):
                     self.__flag = 2
                     return                                       #Вынести Этот Блок Кода В Функцию
             if self.distance[0] > 30:
-                self.motor_publisher(0, 0) 
+                self.motor_publisher(0, 0)
+                sleep(3) 
                 self.CD_publisher(1)
-                self.motor_publisher(6, 5)
-                sleep(1) 
+                self.motor_publisher(4, 5)
+                sleep(1.5)
                 self.__flag = 4
 
         ################################################################# 4 Flag #################################################################
@@ -72,7 +73,7 @@ class MainAlg(Node):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.motor_publisher(6, 6)
             self.CD_publisher(0)
-            if(self.distance[0] < 10):
+            if(self.distance[0] < 17):
                 self.motor_publisher(0, 0)
                 self.__flag = 5
 
