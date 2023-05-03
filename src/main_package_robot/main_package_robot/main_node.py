@@ -54,9 +54,10 @@ class MainAlg(Node):
         if (self.__flag == 3):
             self.CD_publisher()
             self.motor_publisher(6, 5)
-            if abs(self.AruCo[1]) > 30:
-                self.__flag = 2
-                return                                       #Вынести Этот Блок Кода В Функцию
+            if self.AruCo[0] == 0  or self.AruCo[0] == 2:
+                if abs(self.AruCo[1]) > 30:
+                    self.__flag = 2
+                    return                                       #Вынести Этот Блок Кода В Функцию
             if self.distance[0] > 30:
                 self.servo_publisher(1)
                 self.motor_publisher(0, 0) 
