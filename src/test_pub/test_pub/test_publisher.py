@@ -10,10 +10,10 @@ class TestPub(Node):
         super().__init__('test_topic_publisher')
         self.test_publisher_ = self.create_publisher(
             Int32,
-            'servo_control_topic', ############################################################## Print Here Topic To Test ##############################################################
+            'distance_color_topic', ############################################################## Print Here Topic To Test ##############################################################
             10)
         self.counter = 0
-        timer_period = 1  # seconds
+        timer_period = 0.1  # seconds
         self.timer_pub = self.create_timer(timer_period, self.timer_callback)
 
     def timer_callback(self):
