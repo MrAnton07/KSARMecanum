@@ -41,9 +41,9 @@ class MainAlg(Node):
             if self.AruCo[0] == 0  or self.AruCo[0] == 2:
     
                 if self.AruCo[1] <-15:
-                    self.motor_publisher(abs(int(self.AruCo[1]/30)),3)
+                    self.motor_publisher(abs(int(self.AruCo[1]/23)),3)
                 elif self.AruCo[1] >15:
-                    self.motor_publisher(abs(int(self.AruCo[1]/30)),4)
+                    self.motor_publisher(abs(int(self.AruCo[1]/23)),4)
                 else:
                     self.motor_publisher(0,0)
                     self.__flag = 3
@@ -54,7 +54,6 @@ class MainAlg(Node):
         ################################################################# 3 Flag #################################################################
         if (self.__flag == 3):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
-            self.CD_publisher(0)
             self.motor_publisher(6, 5)
             if self.AruCo[0] == 0  or self.AruCo[0] == 2:
                 if abs(self.AruCo[1]) > 20:
@@ -62,11 +61,15 @@ class MainAlg(Node):
                     return                                       #Вынести Этот Блок Кода В Функцию
             if self.distance[0] > 30:
                 self.motor_publisher(0, 0)
-                sleep(3) 
-                self.CD_publisher(1)
-                self.motor_publisher(4, 5)
-                sleep(1.5)
-                self.__flag = 4
+                for i in range(10000):
+                    self.CD_publisher(1)
+                if self.distance[0] < 50:
+                    self.CD_publisher(1)
+                    self.motor_publisher(4, 5)
+                    return
+                else:
+                    self.__flag = 4
+            self.CD_publisher(0)
 
         ################################################################# 4 Flag #################################################################
         if (self.__flag == 4):
