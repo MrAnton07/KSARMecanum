@@ -62,8 +62,9 @@ class MainAlg(Node):
                     return                                       #Вынести Этот Блок Кода В Функцию
             if self.distance[0] > 30:
                 self.motor_publisher(0, 0) 
-                sleep(0.5)
-                self.servo_publisher(1)
+                for i in range(1, 3):
+                    self.servo_publisher(1)
+                    sleep(0.3)
                 self.__flag = 4
 
         ################################################################# 4 Flag #################################################################
