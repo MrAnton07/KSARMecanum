@@ -15,6 +15,7 @@ class MainAlg(Node):
     def __init__(self):
 
         super().__init__('MainAlg')
+        self.distance_color_pub = self.create_publisher(Int32, 'distance_color_topic', 10)
         self.motor_pub = self.create_publisher(Int32MultiArray, 'motor_control_topic', 10)
         self.servo_pub = self.create_publisher(Int32, 'servo_control_topic', 10)
         self.distance_sub = self.create_subscription(Int32MultiArray, 'distance_topic', self.distance_callback, 10)
@@ -27,6 +28,7 @@ class MainAlg(Node):
     def main_algorithm(self):
         ################################################################# 1 Flag #################################################################
         if (self.__flag == 1):
+            self.CD_publisher()
             if(80 > self.distance[1] > 70):
                 self.__flag = 2
                 return
@@ -50,6 +52,7 @@ class MainAlg(Node):
         
         ################################################################# 3 Flag #################################################################
         if (self.__flag == 3):
+            self.CD_publisher()
             self.motor_publisher(6, 5)
             if abs(self.AruCo[1]) > 30:
                 self.__flag = 2
@@ -63,11 +66,15 @@ class MainAlg(Node):
         if (self.__flag == 4):
             self.servo_publisher(0)
             self.motor_publisher(6, 6)
+            self.CD_publisher()
             if(self.distance < 15):
                 self.motor_publisher(0, 0)
                 self.__flag = 5
 
-
+    def CD_publisher(self):
+        msg = Int32()
+        msg.data = 1
+        self.distance_color_pub.publish(msg)
 
     def motor_publisher(self, speed, mode):
         msg = Int32MultiArray()
