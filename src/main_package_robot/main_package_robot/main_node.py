@@ -28,6 +28,7 @@ class MainAlg(Node):
     def main_algorithm(self):
         ################################################################# 1 Flag #################################################################
         if (self.__flag == 1):
+            self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.CD_publisher()
             if(80 > self.distance[1] > 70):
                 self.__flag = 2
@@ -36,7 +37,7 @@ class MainAlg(Node):
 
         ################################################################# 2 Flag #################################################################
         if (self.__flag == 2):
-            self.get_logger().info('I heard: "%d"' % self.AruCo[0])
+            self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             if self.AruCo[0] == 0  or self.AruCo[0] == 2:
     
                 if self.AruCo[1] <-15:
@@ -52,6 +53,7 @@ class MainAlg(Node):
         
         ################################################################# 3 Flag #################################################################
         if (self.__flag == 3):
+            self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.CD_publisher()
             self.motor_publisher(6, 5)
             if self.AruCo[0] == 0  or self.AruCo[0] == 2:
@@ -66,6 +68,7 @@ class MainAlg(Node):
 
         ################################################################# 4 Flag #################################################################
         if (self.__flag == 4):
+            self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.servo_publisher(0)
             self.motor_publisher(6, 6)
             self.CD_publisher()
@@ -82,7 +85,7 @@ class MainAlg(Node):
         msg = Int32MultiArray()
         msg.data = [speed, mode]
         self.motor_pub.publish(msg)
-        self.get_logger().info('I HEARD: "%d"' % self.distance[0])
+        #self.get_logger().info('I HEARD: "%d"' % self.distance[0])
 
     def servo_publisher(self, mode):
         msg = Int32()
