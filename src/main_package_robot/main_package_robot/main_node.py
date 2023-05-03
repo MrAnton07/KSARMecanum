@@ -59,8 +59,9 @@ class MainAlg(Node):
                     self.__flag = 2
                     return                                       #Вынести Этот Блок Кода В Функцию
             if self.distance[0] > 30:
-                self.servo_publisher(1)
                 self.motor_publisher(0, 0) 
+                sleep(0.5)
+                self.servo_publisher(1)
                 self.__flag = 4
 
         ################################################################# 4 Flag #################################################################
@@ -68,7 +69,7 @@ class MainAlg(Node):
             self.servo_publisher(0)
             self.motor_publisher(6, 6)
             self.CD_publisher()
-            if(self.distance < 15):
+            if(self.distance[0] < 10):
                 self.motor_publisher(0, 0)
                 self.__flag = 5
 
