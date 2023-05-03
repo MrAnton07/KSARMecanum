@@ -31,6 +31,7 @@ class DistanceColorServo(Node):
         color_msg = String()
         self.ser.write(str(msg.data).encode())
         self.ser.write(b"\n")
+        self.ser.reset_input_buffer()
         self.ser.flush()
         
         if self.ser.in_waiting > 0:
