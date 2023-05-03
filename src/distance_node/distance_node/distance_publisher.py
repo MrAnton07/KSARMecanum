@@ -17,6 +17,8 @@ class DistanceColorServo(Node):
         
         self.ser = serial.Serial('/dev/ttyUSB0', 57600, timeout=1)
         self.ser.flush()
+        while(self.ser.in_waiting < 1):
+            self.ser.write(b"2/n")
         self.str_mess = ""
 
         timer_period = 0.1  # seconds
@@ -30,7 +32,11 @@ class DistanceColorServo(Node):
         
         if self.ser.in_waiting > 0:
             self.str_mess = self.ser.readline().decode('utf-8').rstrip()
-            VarList = [int(x) for x in self.str_mess.split(',')]
+            try:
+                VarList = [int(x) for x in self.str_mess.split(',')]
+            except:
+                self.ser.flush()
+                return
 
             distance_msg.data = VarList[:2]
             self.distance_publisher_.publish(distance_msg)
