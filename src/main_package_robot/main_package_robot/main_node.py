@@ -41,9 +41,9 @@ class MainAlg(Node):
             if self.AruCo[0] == 0  or self.AruCo[0] == 2:
     
                 if self.AruCo[1] <-15:
-                    self.motor_publisher(abs(int(self.AruCo[1]/10)),3)
+                    self.motor_publisher(abs(int(self.AruCo[1]/30)),3)
                 elif self.AruCo[1] >15:
-                    self.motor_publisher(abs(int(self.AruCo[1]/10)),4)
+                    self.motor_publisher(abs(int(self.AruCo[1]/30)),4)
                 else:
                     self.motor_publisher(0,0)
                     self.__flag = 3
@@ -57,7 +57,7 @@ class MainAlg(Node):
             self.CD_publisher(0)
             self.motor_publisher(6, 5)
             if self.AruCo[0] == 0  or self.AruCo[0] == 2:
-                if abs(self.AruCo[1]) > 30:
+                if abs(self.AruCo[1]) > 20:
                     self.__flag = 2
                     return                                       #Вынести Этот Блок Кода В Функцию
             if self.distance[0] > 30:
