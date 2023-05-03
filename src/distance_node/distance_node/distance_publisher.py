@@ -54,11 +54,12 @@ class DistanceColorServo(Node):
     
     def servo_callback(self, msg):
         if (msg.data == 0):
-            self.ser.write(b"2\n")
-            self.ser.flush()
+            while(self.ser.in_waiting < 1):
+                self.ser.write(b"2\n")
+
         elif (msg.data == 1):
-            self.ser.write(b"3\n")
-            self.ser.flush()
+            while(self.ser.in_waiting < 1):
+                self.ser.write(b"3\n")
 
 
 def main(args=None):
