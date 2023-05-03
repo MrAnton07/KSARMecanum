@@ -12,11 +12,6 @@ def generate_launch_description():
         executable = 'motor_control',
         name = 'motor_control'
     )
-    distance_node = Node(
-        package = 'distance_node',
-        executable = 'distance_publisher',
-        name = 'distance_publisher'
-    )
     aruco_node = Node(
         package = 'aruco_publisher',
         executable = 'aruco_detector',
@@ -28,7 +23,6 @@ def generate_launch_description():
         name = 'main_node'
     )
 
-    ld.add_action(distance_node)
     ld.add_action(motor_node)
     ld.add_action(aruco_node)
     ld.add_action(main_node)

@@ -21,6 +21,7 @@ class MainAlg(Node):
         self.color_sub = self.create_subscription(String, 'color_topic', self.color_callback, 10)
         self.aruco_sub = self.create_subscription(Int32MultiArray, 'aruco_topic', self.aruco_callback, 10)
 
+        self.servo_publisher(0)
         timer_period = 0.1  # seconds
         self.algorithm_cycle = self.create_timer(timer_period, self.main_algorithm)
 
@@ -53,10 +54,19 @@ class MainAlg(Node):
             self.motor_publisher(6, 5)
             if abs(self.AruCo[1]) > 30:
                 self.__flag = 2
-                return
+                return                                       #Вынести Этот Блок Кода В Функцию
             if self.distance[0] > 30:
                 self.servo_publisher(1)
+                self.motor_publisher(0, 0) 
+                self.__flag = 4
+
+        ################################################################# 4 Flag #################################################################
+        if (self.__flag == 4):
+            self.servo_publisher(0)
+            self.motor_publisher(6, 6)
+            if(self.distance < 15):
                 self.motor_publisher(0, 0)
+                self.__flag = 5
 
 
 
@@ -81,7 +91,7 @@ class MainAlg(Node):
         self.color = msg.data
 
 def main(args=None):
-    sleep(5)
+    sleep(3)
     rclpy.init(args=args)
 
     mainAlg = MainAlg()
