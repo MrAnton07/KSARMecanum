@@ -75,8 +75,8 @@ class MainAlg(Node):
                     return
                 else:
                     self.motor_publisher(0, 0)
-                    self.CD_publisher(0)
                     eventlet.sleep(3)
+                    self.CD_publisher(0)
                     self.__flag = 4
                     return
             self.CD_publisher(0)
@@ -139,18 +139,19 @@ class MainAlg(Node):
         self.servo_pub.publish(msg)
         
     def distance_callback(self, msg):
-        try:
-            self.distance1 = msg.data[0]
-        except:
-            pass
-        try:
-            self.distance2 = msg.data[1]
-        except:
-            pass
-        try:
-            self.distance3 = msg.data[2]
-        except:
-            pass
+        if(len(msg.data) > 1):
+            try:
+                self.distance1 = msg.data[0]
+            except:
+                pass
+            try:
+                self.distance2 = msg.data[1]
+            except:
+                pass
+            try:
+                self.distance3 = msg.data[2]
+            except:
+                pass
 
     def aruco_callback(self, msg):
         self.AruCo = msg.data
