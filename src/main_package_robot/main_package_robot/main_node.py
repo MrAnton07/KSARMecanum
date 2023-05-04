@@ -28,7 +28,7 @@ class MainAlg(Node):
         self.color_sub = self.create_subscription(String, 'color_topic', self.color_callback, 10)
         self.aruco_sub = self.create_subscription(Int32MultiArray, 'aruco_topic', self.aruco_callback, 10)
 
-        timer_period = 0.15    # seconds
+        timer_period = 0.1    # seconds
         self.algorithm_cycle = self.create_timer(timer_period, self.main_algorithm)
 
     def main_algorithm(self):
@@ -234,7 +234,7 @@ class MainAlg(Node):
         self.servo_pub.publish(msg)
         
     def distance_callback(self, msg):
-        if(len(msg.data) > 1):
+        if(len(msg.data) > 3):
             try:
                 self.distance1 = msg.data[0]
             except:
