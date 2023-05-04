@@ -1,3 +1,4 @@
+import asyncio
 import rclpy
 from rclpy.node import Node
 
@@ -67,21 +68,21 @@ class MainAlg(Node):
                     self.motor_publisher(4, 5)
                     return
                 else:
+                    self.motor_publisher(0, 0)
                     self.CD_publisher(0)
-                    sleep(1)
                     self.__flag = 4
-                    sleep(1)
                     return
             self.CD_publisher(0)
 
         ################################################################# 4 Flag #################################################################
         if (self.__flag == 4):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
-            self.motor_publisher(6, 6)
             self.CD_publisher(0)
+            self.motor_publisher(6, 6)
             if(self.distance[0] < 17):
                 self.motor_publisher(0, 0)
                 self.__flag = 5
+
         ################################################################# 5 Flag #################################################################
         if (self.__flag == 5):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
@@ -91,6 +92,7 @@ class MainAlg(Node):
                 self.__flag = 6
                 return
             self.motor_publisher(4, 5)
+
         ################################################################# 6 Flag #################################################################
         if (self.__flag == 6):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
@@ -104,6 +106,14 @@ class MainAlg(Node):
                 self.__flag = 7
                 return
             self.motor_publisher(7, 4)
+
+        ################################################################# 7 Flag #################################################################
+        if (self.__flag == 7):
+            self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
+            self.CD_publisher(0)
+
+
+
 
     def CD_publisher(self, servo_mess):
         msg = Int32()
