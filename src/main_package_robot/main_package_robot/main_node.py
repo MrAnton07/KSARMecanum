@@ -67,6 +67,8 @@ class MainAlg(Node):
                     self.motor_publisher(4, 5)
                     return
                 else:
+                    self.CD_publisher(0)
+                    sleep(3)
                     self.__flag = 4
             self.CD_publisher(0)
 
