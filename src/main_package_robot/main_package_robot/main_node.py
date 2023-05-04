@@ -33,8 +33,11 @@ class MainAlg(Node):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             eventlet.sleep(3)
             self.CD_publisher(0)
-            if(80 > self.distance[1] > 70):
-                self.__flag = 2
+            try:
+                if(80 > self.distance[1] > 70):
+                    self.__flag = 2
+                    return
+            except:
                 return
             self.motor_publisher(7, 4)
 
