@@ -35,7 +35,7 @@ class MainAlg(Node):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.CD_publisher(0)
             try:
-                if(80 > self.distance2 > 70):
+                if (self.AruCo[0] == 0  or self.AruCo[0] == 2) or (100 < self.distance2 <110):
                     self.__flag = 2
                     return
             except:
@@ -55,9 +55,14 @@ class MainAlg(Node):
                     self.motor_publisher(0,0)
                     self.__flag = 3
                     return
+            elif(self.distance2 > 60):
+                self.motor_publisher(3,3)
+                return
             else:
-                self.motor_publisher(0,0)
-        
+                self.motor_publisher(0, 0)
+                self.__flag = 1
+                return
+
         ################################################################# 3 Flag #################################################################
         if (self.__flag == 3):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
@@ -139,18 +144,19 @@ class MainAlg(Node):
         self.servo_pub.publish(msg)
         
     def distance_callback(self, msg):
-        try:
-            self.distance1 = msg.data[0]
-        except:
-            pass
-        try:
-            self.distance2 = msg.data[1]
-        except:
-            pass
-        try:
-            self.distance3 = msg.data[2]
-        except:
-            pass
+        if(len(msg.data) > 1):
+            try:
+                self.distance1 = msg.data[0]
+            except:
+                pass
+            try:
+                self.distance2 = msg.data[1]
+            except:
+                pass
+            try:
+                self.distance3 = msg.data[2]
+            except:
+                pass
 
     def aruco_callback(self, msg):
         self.AruCo = msg.data
