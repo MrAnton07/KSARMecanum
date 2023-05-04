@@ -72,6 +72,7 @@ class MainAlg(Node):
         ################################################################# 3 Flag #################################################################
         if (self.__flag == 3):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
+            self.get_logger().info('DISTANCE: "%d"' % self.distance1)
             self.motor_publisher(6, 5)
             if self.AruCo[0] == 0  or self.AruCo[0] == 2:
                 if abs(self.AruCo[1]) > 20:
