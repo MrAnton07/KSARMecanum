@@ -125,7 +125,7 @@ class MainAlg(Node):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.CD_publisher(0)
             try:
-                if(15 < self.distance1 < 3):
+                if(20 > self.distance1):
                     self.__flag = 8
                     return
             except:
