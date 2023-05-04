@@ -128,10 +128,15 @@ class MainAlg(Node):
         ################################################################# 7 Flag #################################################################
         if (self.__flag == 7):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
+            eventlet.sleep(0.3)
+            self.CD_publisher(0)
+            eventlet.sleep(0.3)
+            self.CD_publisher(0)
+            eventlet.sleep(0.3)
             self.CD_publisher(0)
             try:
-                if(20 > self.distance1):
-
+                if(15 > self.distance1):
+                    
                     self.__flag = 8
                     return
             except:
@@ -141,7 +146,7 @@ class MainAlg(Node):
         if (self.__flag == 8):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.CD_publisher(0)
-            if(20 > self.distance1):
+            if(15 > self.distance1):
                 self.motor_publisher(7, 5)
                 return
             self.motor_publisher(7, 4)
