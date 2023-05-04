@@ -67,10 +67,11 @@ class MainAlg(Node):
                     self.motor_publisher(4, 5)
                     return
                 else:
-                    for i in range(0, 10):
-                        self.CD_publisher(0)
-                    #sleep(3)
+                    self.CD_publisher(0)
+                    sleep(1)
                     self.__flag = 4
+                    sleep(1)
+                    return
             self.CD_publisher(0)
 
         ################################################################# 4 Flag #################################################################
@@ -81,16 +82,28 @@ class MainAlg(Node):
             if(self.distance[0] < 17):
                 self.motor_publisher(0, 0)
                 self.__flag = 5
-
+        ################################################################# 5 Flag #################################################################
         if (self.__flag == 5):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.CD_publisher(0)
-            if(self.distance[1] > 140):
-                sleep(5)
-                self.motor_publisher(4, 1)
-                sleep(3)
+            if(self.distance[0] > 19):
+                self.motor_publisher(0, 0)
                 self.__flag = 6
                 return
+            self.motor_publisher(4, 5)
+        ################################################################# 6 Flag #################################################################
+        if (self.__flag == 6):
+            self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
+            self.CD_publisher(0)
+            if(self.distance[1] > 80):
+                self.motor_publisher(0, 0)
+                sleep(3)
+                self.motor_publisher(4, 1)
+                sleep(9)
+                self.motor_publisher(0, 0)
+                self.__flag = 7
+                return
+            self.motor_publisher(7, 4)
 
     def CD_publisher(self, servo_mess):
         msg = Int32()
