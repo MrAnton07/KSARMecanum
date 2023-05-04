@@ -204,10 +204,10 @@ class MainAlg(Node):
                 if abs(self.AruCo[1]) > 20:
                     self.__flag = 10
                     return
-            if self.distance1 > 55:
+            if self.distance1 > 75:
                 self.CD_publisher(1)
                 self.motor_publisher(4, 6)
-                eventlet.sleep(0.3)
+                eventlet.sleep(0.7)
                 self.motor_publisher(4, 1)
                 eventlet.sleep(9)
                 self.motor_publisher(0, 0)
