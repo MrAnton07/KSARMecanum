@@ -235,7 +235,7 @@ class MainAlg(Node):
         self.servo_pub.publish(msg)
         
     def distance_callback(self, msg):
-        if(len(msg.data) > 3):
+        if(len(msg.data) >= 3):
             try:
                 self.distance1 = msg.data[0]
             except:
