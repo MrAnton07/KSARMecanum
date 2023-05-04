@@ -109,6 +109,7 @@ class MainAlg(Node):
         ################################################################# 6 Flag #################################################################
         if (self.__flag == 6):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
+            self.CD_publisher(0)
             if(self.distance2 > 80):
                 self.motor_publisher(0, 0)
                 eventlet.sleep(3)
@@ -124,7 +125,7 @@ class MainAlg(Node):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.CD_publisher(0)
             try:
-                if(15 < self.distance1):
+                if(15 < self.distance1 < 3):
                     self.__flag = 8
                     return
             except:
