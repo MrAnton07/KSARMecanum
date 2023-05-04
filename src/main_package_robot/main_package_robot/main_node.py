@@ -45,6 +45,7 @@ class MainAlg(Node):
         ################################################################# 2 Flag #################################################################
         if (self.__flag == 2):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
+            self.CD_publisher(0)
             if self.AruCo[0] == 0  or self.AruCo[0] == 2:
     
                 if self.AruCo[1] <-15:
