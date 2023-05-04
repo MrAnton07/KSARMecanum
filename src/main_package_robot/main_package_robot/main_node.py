@@ -61,7 +61,7 @@ class MainAlg(Node):
                     self.motor_publisher(0,0)
                     self.__flag = 3
                     return
-            elif(self.distance2 > 60):
+            elif(self.distance2 > 30):
                 self.motor_publisher(3,3)
                 return
             else:
