@@ -72,10 +72,10 @@ class MainAlg(Node):
                 if abs(self.AruCo[1]) > 20:
                     self.__flag = 2
                     return                                       #Вынести Этот Блок Кода В Функцию
-            if self.distance1 > 30:
+            if self.distance1 > 25:
                 self.motor_publisher(0, 0)
                 self.CD_publisher(1)
-                if self.distance1 < 50:
+                if self.distance1 < 35:
                     self.CD_publisher(1)
                     self.motor_publisher(4, 5)
                     return
@@ -114,7 +114,7 @@ class MainAlg(Node):
                 self.motor_publisher(0, 0)
                 eventlet.sleep(3)
                 self.motor_publisher(4, 1)
-                eventlet.sleep(9)
+                eventlet.sleep(10)
                 self.motor_publisher(0, 0)
                 self.__flag = 7
                 return
@@ -125,7 +125,7 @@ class MainAlg(Node):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.CD_publisher(0)
             try:
-                if(20 > self.distance1):
+                if(25 > self.distance1):
                     self.__flag = 8
                     return
             except:
@@ -135,9 +135,32 @@ class MainAlg(Node):
         if (self.__flag == 8):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.CD_publisher(0)
-            self.motor_publisher(0, 0)  
+            self.motor_publisher(7, 4)
+            if (self.color == "Blue"):
+                self.motor_publisher(0, 0)
+                self.__flag = 9
+                return
 
-
+        ################################################################# 9 Flag ################################################################# FOR BLUE
+        if (self.__flag == 9):
+            self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
+            self.CD_publisher(0)
+            if(self.color == "Blue"):
+                self.motor_publisher(3, 4)
+                return
+            else:
+                self.motor_publisher(3, 3)
+                eventlet.sleep(1.5)
+                self.motor_publisher(0, 0)
+                eventlet.sleep(3)
+                self.__flag = 10
+                return
+            
+        ################################################################# 10 Flag ################################################################# 
+        if (self.__flag == 9):
+            self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
+            self.CD_publisher(0)
+            
 
     def CD_publisher(self, servo_mess):
         msg = Int32()
