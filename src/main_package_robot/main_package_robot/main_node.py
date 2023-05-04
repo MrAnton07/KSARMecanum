@@ -72,10 +72,10 @@ class MainAlg(Node):
                 if abs(self.AruCo[1]) > 20:
                     self.__flag = 2
                     return                                       #Вынести Этот Блок Кода В Функцию
-            if self.distance1 > 25:
+            if self.distance1 > 35:
                 self.motor_publisher(0, 0)
                 self.CD_publisher(1)
-                if self.distance1 < 35:
+                if self.distance1 < 45:
                     self.CD_publisher(1)
                     self.motor_publisher(4, 5)
                     return
@@ -114,7 +114,7 @@ class MainAlg(Node):
                 self.motor_publisher(0, 0)
                 eventlet.sleep(3)
                 self.motor_publisher(4, 1)
-                eventlet.sleep(10)
+                eventlet.sleep(9.3)
                 self.motor_publisher(0, 0)
                 self.__flag = 7
                 return
@@ -150,14 +150,14 @@ class MainAlg(Node):
                 return
             else:
                 self.motor_publisher(3, 3)
-                eventlet.sleep(1.5)
+                eventlet.sleep(0.7)
                 self.motor_publisher(0, 0)
                 eventlet.sleep(3)
                 self.__flag = 10
                 return
             
         ################################################################# 10 Flag ################################################################# 
-        if (self.__flag == 9):
+        if (self.__flag == 10):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.CD_publisher(0)
             
