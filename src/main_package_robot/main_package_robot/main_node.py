@@ -10,6 +10,8 @@ from std_msgs.msg import String
 
 class MainAlg(Node):
     __flag = 1
+    __AruCoFlag = 0
+    __TipTap = 0
     distance1 = 0
     distance2 = 0
     distance3 = 0
@@ -36,7 +38,10 @@ class MainAlg(Node):
             self.CD_publisher(0)
             try:
                 if (self.AruCo[0] == 0  or self.AruCo[0] == 2) or (100 < self.distance2 <110):
-                    self.__flag = 2
+                    if(self.__TipTap == 0):
+                        self.__flag = 2
+                    else:
+                        self.__flag = 10
                     return
             except:
                 return
@@ -126,6 +131,7 @@ class MainAlg(Node):
             self.CD_publisher(0)
             try:
                 if(20 > self.distance1):
+
                     self.__flag = 8
                     return
             except:
@@ -135,12 +141,18 @@ class MainAlg(Node):
         if (self.__flag == 8):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.CD_publisher(0)
+            if(20 > self.distance1):
+                self.motor_publisher(7, 5)
+                return
             self.motor_publisher(7, 4)
             if (self.color == "Blue"):
                 self.motor_publisher(0, 0)
                 self.__flag = 9
                 return
-
+            elif((self.AruCo[0] == 0  or self.AruCo[0] == 2) or (100 < self.distance2 <110)):
+                self.motor_publisher(0, 0)
+                self.__flag = 10
+                
         ################################################################# 9 Flag ################################################################# FOR BLUE
         if (self.__flag == 9):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
@@ -148,19 +160,61 @@ class MainAlg(Node):
             if(self.color == "Blue"):
                 self.motor_publisher(3, 4)
                 return
-            else:
+            elif (self.__AruCoFlag == 0):
                 self.motor_publisher(3, 3)
                 eventlet.sleep(0.7)
                 self.motor_publisher(0, 0)
                 eventlet.sleep(3)
                 self.__flag = 10
                 return
+            else:
+                self.motor_publisher(3, 3)
+                eventlet.sleep(0.7)
+                self.motor_publisher(0, 0)
+                eventlet.sleep(3)
+                self.__flag = 13
+                return
             
         ################################################################# 10 Flag ################################################################# 
         if (self.__flag == 10):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.CD_publisher(0)
+            if((self.AruCo[0] == 0  or self.AruCo[0] == 2)):
+                if self.AruCo[1] <-15:
+                    self.motor_publisher(abs(int(self.AruCo[1]/25)),3)
+                elif self.AruCo[1] >15:
+                    self.motor_publisher(abs(int(self.AruCo[1]/25)),4)
+                else:
+                    self.motor_publisher(0,0)
+                    self.__flag = 11
+                    return
+            elif (self.distance2 > 70):
+                self.motor_publisher(3, 3)
+                return
+            else:
+                self.__TipTap = 1
+                self.__flag = 1
+                return
             
+        ################################################################# 11 Flag ################################################################# 
+        if (self.__flag == 11):
+            self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
+            self.motor_publisher(6, 5)
+            if self.AruCo[0] == 0  or self.AruCo[0] == 2:
+                if abs(self.AruCo[1]) > 20:
+                    self.__flag = 10
+                    return
+            if self.distance1 > 30:
+                self.CD_publisher(1)
+                self.motor_publisher(4, 6)
+                eventlet.sleep(0.3)
+                self.motor_publisher(4, 1)
+                eventlet.sleep(9.3)
+                self.motor_publisher(0, 0)
+                self.__flag = 12
+            self.CD_publisher(0)
+        
+        ################################################################# 12 Flag ################################################################# 
 
     def CD_publisher(self, servo_mess):
         msg = Int32()
