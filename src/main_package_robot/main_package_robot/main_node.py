@@ -10,7 +10,9 @@ from std_msgs.msg import String
 
 class MainAlg(Node):
     __flag = 1
-    distance = [0,0]
+    distance1 = 0
+    distance2 = 0
+    distance3 = 0
     AruCo = [-1,-1]
     color = "None"
 
@@ -31,10 +33,9 @@ class MainAlg(Node):
         ################################################################# 1 Flag #################################################################
         if (self.__flag == 1):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
-            eventlet.sleep(3)
             self.CD_publisher(0)
             try:
-                if(80 > self.distance[1] > 70):
+                if(80 > self.distance2 > 70):
                     self.__flag = 2
                     return
             except:
@@ -65,10 +66,10 @@ class MainAlg(Node):
                 if abs(self.AruCo[1]) > 20:
                     self.__flag = 2
                     return                                       #Вынести Этот Блок Кода В Функцию
-            if self.distance[0] > 30:
+            if self.distance1 > 30:
                 self.motor_publisher(0, 0)
                 self.CD_publisher(1)
-                if self.distance[0] < 50:
+                if self.distance1 < 50:
                     self.CD_publisher(1)
                     self.motor_publisher(4, 5)
                     return
@@ -85,7 +86,7 @@ class MainAlg(Node):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.CD_publisher(0)
             self.motor_publisher(6, 6)
-            if(self.distance[0] < 17):
+            if(self.distance1 < 17):
                 self.motor_publisher(0, 0)
                 self.__flag = 5
 
@@ -93,7 +94,7 @@ class MainAlg(Node):
         if (self.__flag == 5):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.CD_publisher(0)
-            if(self.distance[0] > 19):
+            if(self.distance1 > 19):
                 self.motor_publisher(0, 0)
                 self.__flag = 6
                 return
@@ -103,7 +104,7 @@ class MainAlg(Node):
         if (self.__flag == 6):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.CD_publisher(0)
-            if(self.distance[1] > 80):
+            if(self.distance2 > 80):
                 self.motor_publisher(0, 0)
                 eventlet.sleep(3)
                 self.motor_publisher(4, 1)
@@ -138,7 +139,18 @@ class MainAlg(Node):
         self.servo_pub.publish(msg)
         
     def distance_callback(self, msg):
-        self.distance = msg.data
+        try:
+            self.distance1 = msg.data[0]
+        except:
+            pass
+        try:
+            self.distance2 = msg.data[1]
+        except:
+            pass
+        try:
+            self.distance3 = msg.data[2]
+        except:
+            pass
 
     def aruco_callback(self, msg):
         self.AruCo = msg.data
