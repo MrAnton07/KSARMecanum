@@ -22,7 +22,7 @@ class MainAlg(Node):
         self.color_sub = self.create_subscription(String, 'color_topic', self.color_callback, 10)
         self.aruco_sub = self.create_subscription(Int32MultiArray, 'aruco_topic', self.aruco_callback, 10)
 
-        timer_period = 0.1    # seconds
+        timer_period = 0.15    # seconds
         self.algorithm_cycle = self.create_timer(timer_period, self.main_algorithm)
 
     def main_algorithm(self):
@@ -67,8 +67,9 @@ class MainAlg(Node):
                     self.motor_publisher(4, 5)
                     return
                 else:
-                    self.CD_publisher(0)
-                    sleep(3)
+                    for i in range(0, 10):
+                        self.CD_publisher(0)
+                    #sleep(3)
                     self.__flag = 4
             self.CD_publisher(0)
 
@@ -80,6 +81,16 @@ class MainAlg(Node):
             if(self.distance[0] < 17):
                 self.motor_publisher(0, 0)
                 self.__flag = 5
+
+        if (self.__flag == 5):
+            self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
+            self.CD_publisher(0)
+            if(self.distance[1] > 140):
+                sleep(5)
+                self.motor_publisher(4, 1)
+                sleep(3)
+                self.__flag = 6
+                return
 
     def CD_publisher(self, servo_mess):
         msg = Int32()
