@@ -1,4 +1,5 @@
 import asyncio
+import eventlet
 import rclpy
 from rclpy.node import Node
 
@@ -30,6 +31,7 @@ class MainAlg(Node):
         ################################################################# 1 Flag #################################################################
         if (self.__flag == 1):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
+            eventlet.sleep(3)
             self.CD_publisher(0)
             if(80 > self.distance[1] > 70):
                 self.__flag = 2
@@ -69,8 +71,8 @@ class MainAlg(Node):
                     return
                 else:
                     self.motor_publisher(0, 0)
-                    sleep(1)
                     self.CD_publisher(0)
+                    eventlet.sleep(3)
                     self.__flag = 4
                     return
             self.CD_publisher(0)
@@ -100,9 +102,9 @@ class MainAlg(Node):
             self.CD_publisher(0)
             if(self.distance[1] > 80):
                 self.motor_publisher(0, 0)
-                sleep(3)
+                eventlet.sleep(3)
                 self.motor_publisher(4, 1)
-                sleep(9)
+                eventlet.sleep(9)
                 self.motor_publisher(0, 0)
                 self.__flag = 7
                 return

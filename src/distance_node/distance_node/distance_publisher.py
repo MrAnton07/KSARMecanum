@@ -39,7 +39,7 @@ class DistanceColorServo(Node):
                     self.ser.flush()
                     return
 
-                distance_msg.data = VarList[:2]
+                distance_msg.data = VarList[:3]
                 self.distance_publisher_.publish(distance_msg)
                 if(VarList[-1] == 1):
                     color_msg.data = "Red"
@@ -52,6 +52,9 @@ class DistanceColorServo(Node):
                     self.color_publisher_.publish(color_msg)
                 print(distance_msg.data)
                 self.get_logger().info('Publishing: "%s"' % color_msg.data)
+                self.ser.flush()
+                self.ser.reset_input_buffer()
+
         elif(msg.data == 0):
             distance_msg = Int32MultiArray()
             color_msg = String()
@@ -66,7 +69,7 @@ class DistanceColorServo(Node):
                     self.ser.flush()
                     return
 
-                distance_msg.data = VarList[:2]
+                distance_msg.data = VarList[:3]
                 self.distance_publisher_.publish(distance_msg)
                 if(VarList[-1] == 1):
                     color_msg.data = "Red"
@@ -79,6 +82,8 @@ class DistanceColorServo(Node):
                     self.color_publisher_.publish(color_msg)
                 print(distance_msg.data)
                 self.get_logger().info('Publishing: "%s"' % color_msg.data)
+                self.ser.flush()
+                self.ser.reset_input_buffer()
     
     def servo_callback(self, msg):
         if (msg.data == 0):
