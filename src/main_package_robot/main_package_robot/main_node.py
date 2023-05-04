@@ -61,8 +61,7 @@ class MainAlg(Node):
                     return                                       #Вынести Этот Блок Кода В Функцию
             if self.distance[0] > 30:
                 self.motor_publisher(0, 0)
-                for i in range(10000):
-                    self.CD_publisher(1)
+                self.CD_publisher(1)
                 if self.distance[0] < 50:
                     self.CD_publisher(1)
                     self.motor_publisher(4, 5)

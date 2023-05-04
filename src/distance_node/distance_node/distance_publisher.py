@@ -17,7 +17,7 @@ class DistanceColorServo(Node):
         self.servo_subscriber_ = self.create_subscription(Int32, 'distance_color_topic', self.distance_color_callback, 10)
         
         self.ser = serial.Serial('/dev/ttyUSB0', 57600, timeout=1)
-        self.ser.flush()
+        self.ser.reset_input_buffer()
 
         self.str_mess = ""
 
@@ -29,14 +29,14 @@ class DistanceColorServo(Node):
             distance_msg = Int32MultiArray()
             color_msg = String()
             self.ser.write(b"1\n")
-            self.ser.flush()
+            self.ser.reset_input_buffer()
             
             if self.ser.in_waiting > 0:
                 self.str_mess = self.ser.readline().decode('utf-8').rstrip()
                 try:
                     VarList = [int(x) for x in self.str_mess.split(',')]
                 except:
-                    self.ser.flush()
+                    self.ser.reset_input_buffer()
                     return
 
                 distance_msg.data = VarList[:2]
@@ -56,14 +56,14 @@ class DistanceColorServo(Node):
             distance_msg = Int32MultiArray()
             color_msg = String()
             self.ser.write(b"0\n")
-            self.ser.flush()
+            self.ser.reset_input_buffer()
             
             if self.ser.in_waiting > 0:
                 self.str_mess = self.ser.readline().decode('utf-8').rstrip()
                 try:
                     VarList = [int(x) for x in self.str_mess.split(',')]
                 except:
-                    self.ser.flush()
+                    self.ser.reset_input_buffer()
                     return
 
                 distance_msg.data = VarList[:2]
