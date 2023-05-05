@@ -47,7 +47,7 @@ class MainAlg(Node):
             if (self.distance1 > 14):                                                                                                                                ################################## Поменять На 5 ######################################
                 self.motor_publisher(3, 6)
                 return
-            self.motor_publisher(7, 4)
+            self.motor_publisher(4, 4)
 
         ################################################################# 2 Flag #################################################################
         if (self.__flag == 2):
@@ -75,7 +75,7 @@ class MainAlg(Node):
         if (self.__flag == 3):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.get_logger().info('DISTANCE: "%d"' % self.distance1)
-            self.motor_publisher(6, 5)
+            self.motor_publisher(4, 5)
             if self.AruCo[0] == 0  or self.AruCo[0] == 2:
                 if abs(self.AruCo[1]) > 15:
                     self.__flag = 2
@@ -204,12 +204,12 @@ class MainAlg(Node):
         if (self.__flag == 11):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.get_logger().info('DISTANCE: "%d"' % self.distance1)
-            self.motor_publisher(6, 5)
             if self.AruCo[0] == 0  or self.AruCo[0] == 2:
                 if abs(self.AruCo[1]) > 20:
                     self.__flag = 10
                     return
-            if self.distance1 > 45:                                                                                                                                                      ################################## Поменять На +-35  ######################################
+            if self.distance1 > 45:    
+                self.motor_publisher(0, 0)                                                                                                                                                  ################################## Поменять На +-35  ######################################
                 self.CD_publisher(1)
                 eventlet.sleep(0.3)
                 self.CD_publisher(1)
@@ -225,6 +225,7 @@ class MainAlg(Node):
                 self.motor_publisher(0, 0)
                 self.__flag = 12
                 return
+            self.motor_publisher(6, 5)
             self.CD_publisher(0)
         
         ################################################################# 12 Flag ################################################################# 
