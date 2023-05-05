@@ -38,7 +38,7 @@ class MainAlg(Node):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.CD_publisher(0)
             if (self.distance1 > 15):                                                                                                                                ################################## Поменять На 5 ######################################
-                self.motor_publisher(3, 4)
+                self.motor_publisher(3, 6)
                 return
             try:
                 if (self.AruCo[0] == 0  or self.AruCo[0] == 2) or (100 < self.distance2 <110):                                                                       ################################## Поменять На 86 - 94  ######################################
