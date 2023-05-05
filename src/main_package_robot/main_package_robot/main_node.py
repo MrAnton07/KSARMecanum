@@ -38,17 +38,14 @@ class MainAlg(Node):
         if (self.__flag == 1):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.CD_publisher(0)
+            if (self.AruCo[0] == 0  or self.AruCo[0] == 2) or (100 < self.distance2 <110):                                                                       ################################## Поменять На 86 - 94  ######################################
+                if(self.__TipTap == 0):
+                    self.__flag = 2
+                else:
+                    self.__flag = 10
+                return
             if (self.distance1 > 14):                                                                                                                                ################################## Поменять На 5 ######################################
                 self.motor_publisher(3, 6)
-                return
-            try:
-                if (self.AruCo[0] == 0  or self.AruCo[0] == 2) or (100 < self.distance2 <110):                                                                       ################################## Поменять На 86 - 94  ######################################
-                    if(self.__TipTap == 0):
-                        self.__flag = 2
-                    else:
-                        self.__flag = 10
-                    return
-            except:
                 return
             self.motor_publisher(7, 4)
 
