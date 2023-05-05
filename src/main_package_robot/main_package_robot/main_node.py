@@ -45,7 +45,7 @@ class MainAlg(Node):
                     self.__flag = 10
                 return
             if (self.distance1 > 14):                                                                                                                                ################################## Поменять На 5 ######################################
-                self.motor_publisher(3, 5)
+                self.motor_publisher(5, 6)
                 return
             self.motor_publisher(4, 4)
 
