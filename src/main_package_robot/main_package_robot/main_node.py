@@ -77,7 +77,7 @@ class MainAlg(Node):
             self.get_logger().info('DISTANCE: "%d"' % self.distance1)
             self.motor_publisher(4, 5)
             if self.AruCo[0] == 0  or self.AruCo[0] == 2:
-                if abs(self.AruCo[1]) > 15:
+                if abs(self.AruCo[1]) > 20:
                     self.__flag = 2
                     return                                       #Вынести Этот Блок Кода В Функцию
             if self.distance1 > 34:                                                                                                                                     ################################## Поменять На 34  ######################################             
