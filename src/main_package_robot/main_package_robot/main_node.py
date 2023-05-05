@@ -39,6 +39,7 @@ class MainAlg(Node):
             self.CD_publisher(0)
             if (self.distance1 > 15):                                                                                                                                ################################## Поменять На 5 ######################################
                 self.motor_publisher(3, 4)
+                return
             try:
                 if (self.AruCo[0] == 0  or self.AruCo[0] == 2) or (100 < self.distance2 <110):                                                                       ################################## Поменять На 86 - 94  ######################################
                     if(self.__TipTap == 0):
