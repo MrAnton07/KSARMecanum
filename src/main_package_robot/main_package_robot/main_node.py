@@ -161,11 +161,8 @@ class MainAlg(Node):
         if (self.__flag == 9):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.CD_publisher(0)
-            if(self.color == "Blue") and (self.__AruCoFlag == 0):
+            if(self.color == "Blue"):
                 self.motor_publisher(3, 4)
-                return
-            if(self.color == "Blue") and (self.__AruCoFlag == 1):
-                self.motor_publisher(3, 3)
                 return
             elif (self.__AruCoFlag == 0):
                 self.motor_publisher(3, 3)
@@ -175,7 +172,7 @@ class MainAlg(Node):
                 self.__flag = 10
                 return
             else:
-                self.motor_publisher(3, 4)
+                self.motor_publisher(3, 3)
                 eventlet.sleep(0.7)
                 self.motor_publisher(0, 0)
                 eventlet.sleep(3)
@@ -232,6 +229,7 @@ class MainAlg(Node):
             eventlet.sleep(1.7)                                                                                                                                                        ################################## Отрегулировать  ######################################
             self.motor_publisher(4, 5)
             eventlet.sleep(3.4)                                                                                                                                                        ################################## Отрегулировать  ######################################
+            self.CD_publisher(0)
             self.motor_publisher(4, 6)
             eventlet.sleep(1.7)                                                                                                                                                        ################################## Отрегулировать  ######################################
             self.__AruCoFlag = 1
@@ -241,6 +239,7 @@ class MainAlg(Node):
         ################################################################# 13 Flag ################################################################# 
         if (self.__flag == 13):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
+            self.CD_publisher(0)
             if (self.color == "Blue"):
                 self.__flag = 9
                 return
