@@ -38,13 +38,13 @@ class MainAlg(Node):
         if (self.__flag == 1):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.CD_publisher(0)
-            if (self.AruCo[0] == 0  or self.AruCo[0] == 2) or (100 < self.distance2 <110):                                                                       ################################## Поменять На 86 - 94  ######################################
+            if (self.AruCo[0] == 0  or self.AruCo[0] == 2) or (86 < self.distance2 <98):                                                                       ################################## Поменять На 86 - 94  ######################################
                 if(self.__TipTap == 0):
                     self.__flag = 2
                 else:
                     self.__flag = 10
                 return
-            if (self.distance1 > 14):                                                                                                                                ################################## Поменять На 5 ######################################
+            if (self.distance1 > 5):                                                                                                                                ################################## Поменять На 5 ######################################
                 self.motor_publisher(3, 6)
                 return
             self.motor_publisher(4, 4)
@@ -63,7 +63,7 @@ class MainAlg(Node):
                     self.motor_publisher(0,0)
                     self.__flag = 3
                     return
-            elif(self.distance2 > 30):                                                                                                                                 ################################## Поменять На 60  ######################################
+            elif(self.distance2 > 60):                                                                                                                                 ################################## Поменять На 60  ######################################
                 self.motor_publisher(3,3)
                 return
             else:
@@ -80,10 +80,10 @@ class MainAlg(Node):
                 if abs(self.AruCo[1]) > 15:
                     self.__flag = 2
                     return                                       #Вынести Этот Блок Кода В Функцию
-            if self.distance1 > 30:                                                                                                                                     ################################## Поменять На 34  ######################################             
+            if self.distance1 > 34:                                                                                                                                     ################################## Поменять На 34  ######################################             
                 self.motor_publisher(0, 0)
                 self.CD_publisher(1)
-                if self.distance1 < 40:                                                                                                                                 ################################## Поменять На 34  ######################################
+                if self.distance1 < 34:                                                                                                                                 ################################## Поменять На 34  ######################################
                     self.CD_publisher(1)
                     self.motor_publisher(4, 5)
                     return
@@ -119,7 +119,7 @@ class MainAlg(Node):
         if (self.__flag == 6):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.CD_publisher(0)
-            if(self.distance2 > 60):                                                                                                                                        ################################## Поменять На +-90  ######################################
+            if(self.distance2 > 90):                                                                                                                                        ################################## Поменять На +-90  ######################################
                 self.motor_publisher(0, 0)
                 eventlet.sleep(3)
                 self.motor_publisher(4, 1)
@@ -153,7 +153,7 @@ class MainAlg(Node):
                 self.motor_publisher(0, 0)
                 self.__flag = 9
                 return
-            elif((self.AruCo[0] == 0  or self.AruCo[0] == 2) or (55 < self.distance2 < 65)):                                                                                       ################################## Поменять На 86 - 94  ######################################
+            elif((self.AruCo[0] == 0  or self.AruCo[0] == 2) or (86 < self.distance2 < 98)):                                                                                       ################################## Поменять На 86 - 94  ######################################
                 self.motor_publisher(0, 0)
                 self.__flag = 10
                 
@@ -193,7 +193,7 @@ class MainAlg(Node):
                     self.motor_publisher(0,0)
                     self.__flag = 11
                     return
-            elif (self.distance2 > 70):                                                                                                                                                 ################################## Поменять На 86 - 94  ######################################
+            elif (self.distance2 > 84):                                                                                                                                                 ################################## Поменять На 86 - 94  ######################################
                 self.motor_publisher(3, 3)
                 return
             else:
@@ -209,7 +209,7 @@ class MainAlg(Node):
                 if abs(self.AruCo[1]) > 20:
                     self.__flag = 10
                     return
-            if self.distance1 > 45:    
+            if self.distance1 > 35:    
                 self.motor_publisher(0, 0)                                                                                                                                                  ################################## Поменять На +-35  ######################################
                 self.CD_publisher(1)
                 eventlet.sleep(0.3)
