@@ -97,7 +97,6 @@ class DistanceColorServo(Node):
 
 
 def main(args=None):
-    eventlet.sleep(3)
     rclpy.init(args=args)
     
     Distance_Color_Servo = DistanceColorServo()
