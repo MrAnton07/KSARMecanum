@@ -165,14 +165,14 @@ class MainAlg(Node):
             self.CD_publisher(0)
             if(self.color == "Blue"):
                 self.motor_publisher(3, 4)
+                self.__Blue = 1
                 return
             elif (self.__AruCoFlag == 0):
                 self.motor_publisher(3, 3)
                 eventlet.sleep(0.7)
                 self.motor_publisher(0, 0)
                 eventlet.sleep(3)
-                self.__flag = 10
-                self.__Blue = 1
+                self.__flag = 10             
                 return
             else:
                 self.motor_publisher(3, 3)
@@ -180,7 +180,6 @@ class MainAlg(Node):
                 self.motor_publisher(0, 0)
                 eventlet.sleep(3)
                 self.__flag = 13
-                self.__Blue = 1
                 return
             
         ################################################################# 10 Flag ################################################################# 
@@ -215,6 +214,13 @@ class MainAlg(Node):
                     return
             if self.distance1 > 45:                                                                                                                                                      ################################## Поменять На +-35  ######################################
                 self.CD_publisher(1)
+                eventlet.sleep(0.3)
+                self.CD_publisher(1)
+                eventlet.sleep(0.3)
+                self.CD_publisher(1)
+                eventlet.sleep(0.3)
+                self.CD_publisher(1)
+                eventlet.sleep(0.3)
                 self.motor_publisher(4, 6)
                 eventlet.sleep(0.7)
                 self.motor_publisher(4, 1)
@@ -243,7 +249,7 @@ class MainAlg(Node):
         if (self.__flag == 13):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.CD_publisher(0)
-            if (self.color == "Blue") and (self.__Blue == 0):
+            if ((self.color == "Blue") and (self.__Blue == 0)):
                 self.__flag = 9
                 return
             self.motor_publisher(4,3)        
