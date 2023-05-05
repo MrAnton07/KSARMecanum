@@ -108,7 +108,7 @@ class MainAlg(Node):
         if (self.__flag == 5):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.CD_publisher(0)
-            if(self.distance1 > 19):                                                                                                                                    ################################## Поменять На +-17  ######################################
+            if(self.distance3 < 19):                                                                                                                                    ################################## Поменять На +-17  ######################################
                 self.motor_publisher(0, 0)
                 self.__flag = 6
                 return
@@ -122,7 +122,7 @@ class MainAlg(Node):
                 self.motor_publisher(0, 0)
                 eventlet.sleep(3)
                 self.motor_publisher(4, 1)
-                eventlet.sleep(9.3)
+                eventlet.sleep(9.1)
                 self.motor_publisher(0, 0)
                 self.__flag = 7
                 return
@@ -152,7 +152,7 @@ class MainAlg(Node):
                 self.motor_publisher(0, 0)
                 self.__flag = 9
                 return
-            elif((self.AruCo[0] == 0  or self.AruCo[0] == 2) or (100 < self.distance2 <110)):                                                                                       ################################## Поменять На 86 - 94  ######################################
+            elif((self.AruCo[0] == 0  or self.AruCo[0] == 2) or (55 < self.distance2 < 65)):                                                                                       ################################## Поменять На 86 - 94  ######################################
                 self.motor_publisher(0, 0)
                 self.__flag = 10
                 
