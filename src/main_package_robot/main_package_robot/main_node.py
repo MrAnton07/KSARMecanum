@@ -9,13 +9,14 @@ from std_msgs.msg import Int32MultiArray
 from std_msgs.msg import String
 
 class MainAlg(Node):
-    __flag = 1
+    __flag = 1                                                                                                                                                      ################################## Можно Менять На Поле Для Отладки  ######################################
     __AruCoFlag = 0
     __TipTap = 0
     distance1 = 0
     distance2 = 0
     distance3 = 0
     AruCo = [-1,-1]
+    AruCo_Color = "None"
     color = "None"
 
     def __init__(self):
@@ -36,8 +37,10 @@ class MainAlg(Node):
         if (self.__flag == 1):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.CD_publisher(0)
+            if (self.distance1 > 15):                                                                                                                                ################################## Поменять На 5 ######################################
+                self.motor_publisher(3, 4)
             try:
-                if (self.AruCo[0] == 0  or self.AruCo[0] == 2) or (100 < self.distance2 <110):
+                if (self.AruCo[0] == 0  or self.AruCo[0] == 2) or (100 < self.distance2 <110):                                                                       ################################## Поменять На 86 - 94  ######################################
                     if(self.__TipTap == 0):
                         self.__flag = 2
                     else:
@@ -53,15 +56,15 @@ class MainAlg(Node):
             self.CD_publisher(0)
             if self.AruCo[0] == 0  or self.AruCo[0] == 2:
     
-                if self.AruCo[1] <-15:
+                if self.AruCo[1] <-20:
                     self.motor_publisher(abs(int(self.AruCo[1]/23)),3)
-                elif self.AruCo[1] >15:
+                elif self.AruCo[1] >20:
                     self.motor_publisher(abs(int(self.AruCo[1]/23)),4)
                 else:
                     self.motor_publisher(0,0)
                     self.__flag = 3
                     return
-            elif(self.distance2 > 30):
+            elif(self.distance2 > 30):                                                                                                                                 ################################## Поменять На 60  ######################################
                 self.motor_publisher(3,3)
                 return
             else:
@@ -75,13 +78,13 @@ class MainAlg(Node):
             self.get_logger().info('DISTANCE: "%d"' % self.distance1)
             self.motor_publisher(6, 5)
             if self.AruCo[0] == 0  or self.AruCo[0] == 2:
-                if abs(self.AruCo[1]) > 20:
+                if abs(self.AruCo[1]) > 25:
                     self.__flag = 2
                     return                                       #Вынести Этот Блок Кода В Функцию
-            if self.distance1 > 30:
+            if self.distance1 > 30:                                                                                                                                     ################################## Поменять На 34  ######################################             
                 self.motor_publisher(0, 0)
                 self.CD_publisher(1)
-                if self.distance1 < 40:
+                if self.distance1 < 40:                                                                                                                                 ################################## Поменять На 34  ######################################
                     self.CD_publisher(1)
                     self.motor_publisher(4, 5)
                     return
@@ -98,7 +101,7 @@ class MainAlg(Node):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.CD_publisher(0)
             self.motor_publisher(6, 6)
-            if(self.distance1 < 17):
+            if(self.distance1 < 17):                                                                                                                                    ################################## Поменять На +-17  ######################################
                 self.motor_publisher(0, 0)
                 self.__flag = 5
 
@@ -106,7 +109,7 @@ class MainAlg(Node):
         if (self.__flag == 5):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.CD_publisher(0)
-            if(self.distance1 > 19):
+            if(self.distance1 > 19):                                                                                                                                    ################################## Поменять На +-17  ######################################
                 self.motor_publisher(0, 0)
                 self.__flag = 6
                 return
@@ -116,7 +119,7 @@ class MainAlg(Node):
         if (self.__flag == 6):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.CD_publisher(0)
-            if(self.distance2 > 80):
+            if(self.distance2 > 80):                                                                                                                                        ################################## Поменять На +-90  ######################################
                 self.motor_publisher(0, 0)
                 eventlet.sleep(3)
                 self.motor_publisher(4, 1)
@@ -150,7 +153,7 @@ class MainAlg(Node):
                 self.motor_publisher(0, 0)
                 self.__flag = 9
                 return
-            elif((self.AruCo[0] == 0  or self.AruCo[0] == 2) or (100 < self.distance2 <110)):
+            elif((self.AruCo[0] == 0  or self.AruCo[0] == 2) or (100 < self.distance2 <110)):                                                                                       ################################## Поменять На 86 - 94  ######################################
                 self.motor_publisher(0, 0)
                 self.__flag = 10
                 
@@ -158,8 +161,11 @@ class MainAlg(Node):
         if (self.__flag == 9):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.CD_publisher(0)
-            if(self.color == "Blue"):
+            if(self.color == "Blue") and (self.__AruCoFlag == 0):
                 self.motor_publisher(3, 4)
+                return
+            if(self.color == "Blue") and (self.__AruCoFlag == 1):
+                self.motor_publisher(3, 3)
                 return
             elif (self.__AruCoFlag == 0):
                 self.motor_publisher(3, 3)
@@ -169,7 +175,7 @@ class MainAlg(Node):
                 self.__flag = 10
                 return
             else:
-                self.motor_publisher(3, 3)
+                self.motor_publisher(3, 4)
                 eventlet.sleep(0.7)
                 self.motor_publisher(0, 0)
                 eventlet.sleep(3)
@@ -181,15 +187,15 @@ class MainAlg(Node):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.CD_publisher(0)
             if((self.AruCo[0] == 0  or self.AruCo[0] == 2)):
-                if self.AruCo[1] <-15:
+                if self.AruCo[1] <-20:
                     self.motor_publisher(abs(int(self.AruCo[1]/25)),3)
-                elif self.AruCo[1] >15:
+                elif self.AruCo[1] >20:
                     self.motor_publisher(abs(int(self.AruCo[1]/25)),4)
                 else:
                     self.motor_publisher(0,0)
                     self.__flag = 11
                     return
-            elif (self.distance2 > 70):
+            elif (self.distance2 > 70):                                                                                                                                                 ################################## Поменять На 86 - 94  ######################################
                 self.motor_publisher(3, 3)
                 return
             else:
@@ -204,10 +210,10 @@ class MainAlg(Node):
             self.motor_publisher(6, 5)
             self.CD_publisher(0)
             if self.AruCo[0] == 0  or self.AruCo[0] == 2:
-                if abs(self.AruCo[1]) > 20:
+                if abs(self.AruCo[1]) > 25:
                     self.__flag = 10
                     return
-            if self.distance1 > 45:
+            if self.distance1 > 45:                                                                                                                                                      ################################## Поменять На +-35  ######################################
                 self.CD_publisher(1)
                 self.motor_publisher(4, 6)
                 eventlet.sleep(0.7)
@@ -215,9 +221,30 @@ class MainAlg(Node):
                 eventlet.sleep(9)
                 self.motor_publisher(0, 0)
                 self.__flag = 12
+                return
             self.CD_publisher(0)
         
         ################################################################# 12 Flag ################################################################# 
+        if (self.__flag == 12):
+            self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
+            self.CD_publisher(1)
+            self.motor_publisher(4, 6)
+            eventlet.sleep(1.7)                                                                                                                                                        ################################## Отрегулировать  ######################################
+            self.motor_publisher(4, 5)
+            eventlet.sleep(3.4)                                                                                                                                                        ################################## Отрегулировать  ######################################
+            self.motor_publisher(4, 6)
+            eventlet.sleep(1.7)                                                                                                                                                        ################################## Отрегулировать  ######################################
+            self.__AruCoFlag = 1
+            self.__flag = 13
+            return
+        
+        ################################################################# 13 Flag ################################################################# 
+        if (self.__flag == 13):
+            self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
+            if (self.color == "Blue"):
+                self.__flag = 9
+                return
+            self.motor_publisher(4,3)                                                                                                                                                  ################################## Сделать Распознавание Цвета Через Маркер И ТД ######################################
 
     def CD_publisher(self, servo_mess):
         msg = Int32()
@@ -257,7 +284,7 @@ class MainAlg(Node):
         self.color = msg.data
 
 def main(args=None):
-    sleep(3)
+    eventlet.sleep(7)
     rclpy.init(args=args)
 
     mainAlg = MainAlg()

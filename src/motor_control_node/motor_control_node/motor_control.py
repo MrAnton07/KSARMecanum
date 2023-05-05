@@ -1,3 +1,4 @@
+import eventlet
 import serial
 import rclpy
 from rclpy.node import Node
@@ -26,6 +27,7 @@ class MinimalSubscriber(Node):
         self.ser.reset_input_buffer()
 
 def main(args=None):
+    eventlet.sleep(1)
     rclpy.init(args=args)
 
     minimal_subscriber = MinimalSubscriber()
