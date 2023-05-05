@@ -12,6 +12,7 @@ class MainAlg(Node):
     __flag = 1                                                                                                                                                      ################################## Можно Менять На Поле Для Отладки  ######################################
     __AruCoFlag = 0
     __TipTap = 0
+    __Blue = 0
     distance1 = 0
     distance2 = 0
     distance3 = 0
@@ -171,6 +172,7 @@ class MainAlg(Node):
                 self.motor_publisher(0, 0)
                 eventlet.sleep(3)
                 self.__flag = 10
+                self.__Blue = 1
                 return
             else:
                 self.motor_publisher(3, 3)
@@ -178,6 +180,7 @@ class MainAlg(Node):
                 self.motor_publisher(0, 0)
                 eventlet.sleep(3)
                 self.__flag = 13
+                self.__Blue = 1
                 return
             
         ################################################################# 10 Flag ################################################################# 
@@ -240,10 +243,14 @@ class MainAlg(Node):
         if (self.__flag == 13):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.CD_publisher(0)
-            if (self.color == "Blue"):
+            if (self.color == "Blue") and (self.__Blue == 0):
                 self.__flag = 9
                 return
-            self.motor_publisher(4,3)                                                                                                                                                  ################################## Сделать Распознавание Цвета Через Маркер И ТД ######################################
+            self.motor_publisher(4,3)        
+            if(self.distance3 < 15):                                                                                                                                          ################################## Сделать Распознавание Цвета Через Маркер И ТД ######################################
+                self.motor_publisher(0, 0)
+                self.__flag = 14
+                return
 
     def CD_publisher(self, servo_mess):
         msg = Int32()
