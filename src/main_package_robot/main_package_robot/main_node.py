@@ -18,7 +18,7 @@ class MainAlg(Node):
     distance3 = 0
     AruCo = [-1,-1]
     AruCo_Color = "None"
-    AruCoColorFlag = "None"
+    AruCoColorFlag = "Red"
     color = "None"
 
     def __init__(self):
@@ -348,7 +348,7 @@ class MainAlg(Node):
             if (self.distance1 > 15):
                 self.motor_publisher(4, 6)
                 return
-            if (self.AruCo_Color == "Red"):
+            if (self.AruCoColorFlag == "Red"):
                 self.motor_publisher(4, 4)
                 if self.color != "Red":
                     self.motor_publisher(4, 3)
@@ -356,7 +356,7 @@ class MainAlg(Node):
                     self.motor_publisher(0 ,0)
                     self.__flag = 19
                     return
-            if (self.AruCo_Color == "Green"):
+            if (self.AruCoColorFlag == "Green"):
                 self.motor_publisher(4, 3)
                 if self.color == "Blue":
                     self.motor_publisher(4, 4)
@@ -364,7 +364,7 @@ class MainAlg(Node):
                     self.motor_publisher(0 ,0)
                     self.__flag = 19
                     return    
-            if (self.AruCo_Color == "Blue"):
+            if (self.AruCoColorFlag == "Blue"):
                 self.motor_publisher(4, 3)
                 if self.color == "Blue":
                     self.motor_publisher(4, 3)
