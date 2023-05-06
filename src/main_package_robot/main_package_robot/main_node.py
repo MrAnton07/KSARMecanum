@@ -220,7 +220,7 @@ class MainAlg(Node):
                 if abs(self.AruCo[1]) > 20:
                     self.__flag = 10
                     return
-            if self.distance1 > 90:    
+            if self.distance1 > 93:    
                 self.motor_publisher(0, 0)                                                                                                                                                  ################################## Поменять На +-35  ######################################
                 self.CD_publisher(1)
                 eventlet.sleep(0.3)
@@ -245,9 +245,9 @@ class MainAlg(Node):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.CD_publisher(1)
             self.motor_publisher(4, 6)
-            eventlet.sleep(2)                                                                                                                                                        ################################## Отрегулировать  ######################################
+            eventlet.sleep(4)                                                                                                                                                        ################################## Отрегулировать  ######################################
             self.motor_publisher(4, 5)
-            eventlet.sleep(6)                                                                                                                                                        ################################## Отрегулировать  ######################################
+            eventlet.sleep(7)                                                                                                                                                        ################################## Отрегулировать  ######################################
             self.CD_publisher(0)
             self.motor_publisher(4, 6)
             eventlet.sleep(2)                                                                                                                                                        ################################## Отрегулировать  ######################################
