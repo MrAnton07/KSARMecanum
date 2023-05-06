@@ -223,23 +223,36 @@ class MainAlg(Node):
                 if abs(self.AruCo[1]) > 20:
                     self.__flag = 10
                     return
-            if self.distance1 > 93:    
-                self.motor_publisher(0, 0)                                                                                                                                                  ################################## Поменять На +-35  ######################################
+            # if self.distance1 > 90:    
+            #     self.motor_publisher(0, 0)                                                                                                                                                  ################################## Поменять На +-35  ######################################
+            #     self.CD_publisher(1)
+            #     eventlet.sleep(0.3)
+            #     self.CD_publisher(1)
+            #     eventlet.sleep(0.3)
+            #     self.CD_publisher(1)
+            #     eventlet.sleep(0.3)
+            #     self.CD_publisher(1)
+            #     eventlet.sleep(0.3)
+            #     self.motor_publisher(4, 6)
+            #     eventlet.sleep(1.7)
+            #     self.motor_publisher(4, 1)
+            #     eventlet.sleep(9)
+            #     self.motor_publisher(0, 0)
+            #     self.__flag = 12
+            #     return
+            else:
+                self.motor_publisher(6, 5)
+                eventlet.sleep(5)
                 self.CD_publisher(1)
-                eventlet.sleep(0.3)
-                self.CD_publisher(1)
-                eventlet.sleep(0.3)
-                self.CD_publisher(1)
-                eventlet.sleep(0.3)
-                self.CD_publisher(1)
-                eventlet.sleep(0.3)
-                self.motor_publisher(4, 6)
+                eventlet.sleep(1)
+                self.motor_publisher(5, 6)
                 eventlet.sleep(1.7)
                 self.motor_publisher(4, 1)
                 eventlet.sleep(9)
                 self.motor_publisher(0, 0)
                 self.__flag = 12
                 return
+            
             self.motor_publisher(6, 5)
             self.CD_publisher(0)
         
