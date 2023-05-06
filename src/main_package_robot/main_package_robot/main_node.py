@@ -169,6 +169,9 @@ class MainAlg(Node):
         if (self.__flag == 9):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.CD_publisher(0)
+            if (self.distance1 < 17):
+                self.motor_publisher(4, 5)
+                return
             if(self.color == "Blue"):
                 self.motor_publisher(3, 4)
                 self.__Blue = 1
@@ -217,7 +220,7 @@ class MainAlg(Node):
                 if abs(self.AruCo[1]) > 20:
                     self.__flag = 10
                     return
-            if self.distance1 > 94:    
+            if self.distance1 > 84:    
                 self.motor_publisher(0, 0)                                                                                                                                                  ################################## Поменять На +-35  ######################################
                 self.CD_publisher(1)
                 eventlet.sleep(0.3)
