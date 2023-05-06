@@ -359,7 +359,7 @@ class MainAlg(Node):
                     self.motor_publisher(4, 3)
                     eventlet.sleep(0.7)
                     self.motor_publisher(0 ,0)
-                    self.__flag = 19
+                    self.__flag = 20
                     return
             elif (self.AruCoColorFlag == "Green"):
                 self.motor_publisher(4, 3)
@@ -367,7 +367,7 @@ class MainAlg(Node):
                     self.motor_publisher(4, 4)
                     eventlet.sleep(1.7)
                     self.motor_publisher(0 ,0)
-                    self.__flag = 19
+                    self.__flag = 20
                     return    
             elif (self.AruCoColorFlag == "Blue"):
                 self.motor_publisher(4, 3)
@@ -375,7 +375,7 @@ class MainAlg(Node):
                     self.motor_publisher(4, 3)
                     eventlet.sleep(0.7)
                     self.motor_publisher(0 ,0)
-                    self.__flag = 19
+                    self.__flag = 20
                     return
 
         ################################################################# 20 Flag #################################################################
