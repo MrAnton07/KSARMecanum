@@ -75,7 +75,6 @@ class MainAlg(Node):
         if (self.__flag == 3):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.get_logger().info('DISTANCE: "%d"' % self.distance1)
-            self.motor_publisher(4, 5)
             if self.AruCo[0] == 0  or self.AruCo[0] == 2:
                 if abs(self.AruCo[1]) > 20:
                     self.__flag = 2
@@ -94,6 +93,7 @@ class MainAlg(Node):
                     self.__flag = 4
                     return
             self.CD_publisher(0)
+            self.motor_publisher(4, 5)
 
         ################################################################# 4 Flag #################################################################
         if (self.__flag == 4):
