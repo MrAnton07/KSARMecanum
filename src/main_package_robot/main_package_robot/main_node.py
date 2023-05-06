@@ -38,7 +38,7 @@ class MainAlg(Node):
         if (self.__flag == 1):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.CD_publisher(0)
-            if (self.AruCo[0] == 0  or self.AruCo[0] == 2) or (100 < self.distance2 <110):                                                                       ################################## Поменять На 86 - 94  ######################################
+            if (self.AruCo[0] == 0  or self.AruCo[0] == 2) or (90 < self.distance2 <110):                                                                       ################################## Поменять На 86 - 94  ######################################
                 if(self.__TipTap == 0):
                     self.__flag = 2
                     return
@@ -57,16 +57,16 @@ class MainAlg(Node):
             if self.AruCo[0] == 0  or self.AruCo[0] == 2:
     
                 if self.AruCo[1] < -17:
-                    self.motor_publisher(abs(int(self.AruCo[1]/23)),3)
+                    self.motor_publisher(abs(int(self.AruCo[1]/25)),3)
                     return
                 elif self.AruCo[1] > 17:
-                    self.motor_publisher(abs(int(self.AruCo[1]/23)),4)
+                    self.motor_publisher(abs(int(self.AruCo[1]/25)),4)
                     return
                 else:
                     self.motor_publisher(0,0)
                     self.__flag = 3
                     return
-            elif(self.distance2 > 30):                                                                                                                                 ################################## Поменять На 60  ######################################
+            if(self.distance2 > 30):                                                                                                                                 ################################## Поменять На 60  ######################################
                 self.motor_publisher(3,3)
                 return
             else:
