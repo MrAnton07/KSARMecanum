@@ -144,7 +144,7 @@ class MainAlg(Node):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.motor_publisher(7, 6)
             self.CD_publisher(0)
-            if (self.distance2 > 15):
+            if (self.distance2 > 13):
                 self.motor_publisher(4, 3)
                 return
             if (20 > self.distance1 > 15) and (self.distance1 != self.tmp_distance):     
@@ -246,7 +246,7 @@ class MainAlg(Node):
                 self.CD_publisher(1)
                 eventlet.sleep(1)
                 self.motor_publisher(5, 6)
-                eventlet.sleep(1.7)
+                eventlet.sleep(1.2)
                 self.motor_publisher(4, 1)
                 eventlet.sleep(9)
                 self.motor_publisher(0, 0)
@@ -261,7 +261,7 @@ class MainAlg(Node):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.CD_publisher(1)
             self.motor_publisher(4, 6)
-            eventlet.sleep(1.8)                                                                                                                                                        ################################## Отрегулировать  ######################################
+            eventlet.sleep(2.5)                                                                                                                                                        ################################## Отрегулировать  ######################################
             self.motor_publisher(4, 5)
             eventlet.sleep(5)                                                                                                                                                        ################################## Отрегулировать  ######################################
             self.CD_publisher(0)
@@ -297,8 +297,8 @@ class MainAlg(Node):
                 else:
                     self.motor_publisher(4, 1)
                     eventlet.sleep(9.05)
-                    self.motor_publisher(4, 6)
-                    eventlet.sleep(5)
+                    self.motor_publisher(6, 4)
+                    eventlet.sleep(3)
                     self.motor_publisher(0, 0)
                     self.AruCoColorFlag = self.AruCo_Color
                     self.__flag = 15
