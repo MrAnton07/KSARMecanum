@@ -13,6 +13,7 @@ class MainAlg(Node):
     __AruCoFlag = 0
     __TipTap = 0
     __Blue = 0
+    tmp_distance = 0
     distance1 = 0
     distance2 = 0
     distance3 = 0
@@ -130,7 +131,7 @@ class MainAlg(Node):
                 eventlet.sleep(9.1)
                 self.motor_publisher(0, 0)
                 self.CD_publisher(0)
-                self.distance1 = 30
+                tmp_distance = self.distance1
                 self.__flag = 7
                 return
             self.motor_publisher(7, 4)
@@ -140,7 +141,7 @@ class MainAlg(Node):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.motor_publisher(7, 6)
             self.CD_publisher(0)
-            if (20 > self.distance1 > 15):     
+            if (20 > self.distance1 > 15) and (self.distance1 != tmp_distance):     
                 self.__flag = 8
                 return
             
