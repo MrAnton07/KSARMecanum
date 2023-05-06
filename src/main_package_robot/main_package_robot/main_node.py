@@ -363,7 +363,7 @@ class MainAlg(Node):
                 self.motor_publisher(4, 3)
                 if self.color == "Blue":
                     self.motor_publisher(4, 4)
-                    eventlet.sleep(3.3)
+                    eventlet.sleep(3.8)
                     self.motor_publisher(0 ,0)
                     self.__flag = 20
                     return    
