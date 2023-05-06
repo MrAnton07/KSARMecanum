@@ -144,6 +144,9 @@ class MainAlg(Node):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.motor_publisher(7, 6)
             self.CD_publisher(0)
+            if (self.distance2 > 15):
+                self.motor_publisher(4, 3)
+                return
             if (20 > self.distance1 > 15) and (self.distance1 != self.tmp_distance):     
                 self.__flag = 8
                 return
