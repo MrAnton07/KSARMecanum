@@ -47,7 +47,7 @@ class MainAlg(Node):
                 else:
                     self.__flag = 10
                     return
-            if (40 > self.distance1 > 19):                                                                                                                                ################################## Поменять На 5 ######################################
+            if (40 > self.distance1 > 16):                                                                                                                                ################################## Поменять На 5 ######################################
                 self.motor_publisher(7, 6)
                 return
             self.motor_publisher(4, 4)
@@ -114,6 +114,9 @@ class MainAlg(Node):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.get_logger().info('DISTANCE: "%d"' % self.distance3)
             self.CD_publisher(0)
+            if (self.distance1 < 19):
+                self.motor_publisher(3, 5)
+                return
             if(10 < self.distance3 < 19):                                                                                                                                    ################################## Поменять На +-17  ######################################
                 self.motor_publisher(0, 0)
                 self.__flag = 6
