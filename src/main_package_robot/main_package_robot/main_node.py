@@ -263,12 +263,12 @@ class MainAlg(Node):
         if (self.__flag == 12):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.CD_publisher(1)                                                                                                                                                ################################## Отрегулировать  ######################################
-            if(self.distance3 < 71):
-                self.motor_publisher(3, 3)
-                return
-            if(self.distance2 < 72):
-                self.motor_publisher(3, 4)
-                return
+            # if(self.distance3 < 71):
+            #     self.motor_publisher(3, 3)
+            #     return
+            # if(self.distance2 < 72):
+            #     self.motor_publisher(3, 4)
+            #     return
             self.motor_publisher(4, 5)
             eventlet.sleep(6.3)                                                                                                                                                        ################################## Отрегулировать  ######################################
             self.CD_publisher(0)
