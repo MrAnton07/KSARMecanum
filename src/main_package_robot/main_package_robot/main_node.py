@@ -251,6 +251,9 @@ class MainAlg(Node):
                 eventlet.sleep(9)
                 self.motor_publisher(0, 0)
                 self.__flag = 12
+                self.motor_publisher(4, 6)
+                eventlet.sleep(2.5)  
+                self.CD_publisher(1)      
                 return
             
             self.motor_publisher(6, 5)
@@ -259,9 +262,10 @@ class MainAlg(Node):
         ################################################################# 12 Flag ################################################################# 
         if (self.__flag == 12):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
-            self.CD_publisher(1)
-            self.motor_publisher(4, 6)
-            eventlet.sleep(2.5)                                                                                                                                                        ################################## Отрегулировать  ######################################
+            self.CD_publisher(1)                                                                                                                                                ################################## Отрегулировать  ######################################
+            if(self.distance2 < 72):
+                self.motor_publisher(2, 4)
+                return
             self.motor_publisher(4, 5)
             eventlet.sleep(6.3)                                                                                                                                                        ################################## Отрегулировать  ######################################
             self.CD_publisher(0)
@@ -326,10 +330,10 @@ class MainAlg(Node):
             self.CD_publisher(0)
             if((self.AruCo[0] == 0  or self.AruCo[0] == 2)):
                 if self.AruCo[1] < -12:
-                    self.motor_publisher(abs(int(self.AruCo[1]/28)),3)
+                    self.motor_publisher(abs(int(self.AruCo[1]/25)),3)
                     return
                 elif self.AruCo[1] > 12:
-                    self.motor_publisher(abs(int(self.AruCo[1]/28)),4)
+                    self.motor_publisher(abs(int(self.AruCo[1]/25)),4)
                     return
                 else:
                     self.motor_publisher(0,0)
