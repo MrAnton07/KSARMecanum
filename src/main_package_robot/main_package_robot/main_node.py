@@ -123,7 +123,7 @@ class MainAlg(Node):
         if (self.__flag == 6):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.CD_publisher(0)
-            if(self.distance2 > 60):                                                                                                                                        ################################## Поменять На +-90  ######################################
+            if(self.distance3 < 16):                                                                                                                                        ################################## Поменять На +-90  ######################################
                 self.motor_publisher(0, 0)
                 eventlet.sleep(3)
                 self.motor_publisher(4, 1)
