@@ -58,10 +58,10 @@ class MainAlg(Node):
             self.CD_publisher(0)
             if self.AruCo[0] == 0  or self.AruCo[0] == 2:
     
-                if self.AruCo[1] < -14:
+                if self.AruCo[1] < -15:
                     self.motor_publisher(abs(int(self.AruCo[1]/26)),3)
                     return
-                elif self.AruCo[1] > 14:
+                elif self.AruCo[1] > 15:
                     self.motor_publisher(abs(int(self.AruCo[1]/26)),4)
                     return
                 else:
@@ -252,7 +252,7 @@ class MainAlg(Node):
                 self.motor_publisher(0, 0)
                 self.__flag = 12
                 self.motor_publisher(4, 6)
-                eventlet.sleep(2.5)  
+                eventlet.sleep(3.5)  
                 self.CD_publisher(1)      
                 return
             
