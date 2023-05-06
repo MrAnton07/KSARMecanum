@@ -345,7 +345,10 @@ class MainAlg(Node):
         if (self.__flag == 18):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.CD_publisher(1)
-            if(self.AruCo_Color == "Red"):
+            if (self.distance1 > 15):
+                self.motor_publisher(4, 6)
+                return
+            if (self.AruCo_Color == "Red"):
                 self.motor_publisher(4, 4)
                 if self.color != "Red":
                     self.motor_publisher(4, 3)
@@ -353,7 +356,7 @@ class MainAlg(Node):
                     self.motor_publisher(0 ,0)
                     self.__flag = 19
                     return
-            if(self.AruCo_Color == "Green"):
+            if (self.AruCo_Color == "Green"):
                 self.motor_publisher(4, 3)
                 if self.color == "Blue":
                     self.motor_publisher(4, 4)
@@ -361,7 +364,7 @@ class MainAlg(Node):
                     self.motor_publisher(0 ,0)
                     self.__flag = 19
                     return    
-            if(self.AruCo_Color == "Blue"):
+            if (self.AruCo_Color == "Blue"):
                 self.motor_publisher(4, 3)
                 if self.color == "Blue":
                     self.motor_publisher(4, 3)
