@@ -285,7 +285,7 @@ class MainAlg(Node):
                     self.motor_publisher(4, 1)
                     eventlet.sleep(9.05)
                     self.motor_publisher(4, 6)
-                    eventlet.sleep(3)
+                    eventlet.sleep(5)
                     self.motor_publisher(0, 0)
                     self.AruCoColorFlag = self.AruCo_Color
                     self.__flag = 15
