@@ -84,7 +84,6 @@ class MainAlg(Node):
                     return                                       #Вынести Этот Блок Кода В Функцию
             if self.distance1 > 30:                                                                                                                                     ################################## Поменять На 34  ######################################             
                 self.motor_publisher(0, 0)
-                eventlet.sleep(1)
                 self.CD_publisher(1)
                 if self.distance1 < 40:                                                                                                                                 ################################## Поменять На 34  ######################################
                     self.CD_publisher(1)
