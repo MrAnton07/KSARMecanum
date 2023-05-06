@@ -130,6 +130,7 @@ class MainAlg(Node):
                 eventlet.sleep(9.1)
                 self.motor_publisher(0, 0)
                 self.CD_publisher(0)
+                self.distance1 = 30
                 self.__flag = 7
                 return
             self.motor_publisher(7, 4)
