@@ -287,7 +287,7 @@ class MainAlg(Node):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.get_logger().info('ARUCO COLOR: "%s"' % self.AruCo_Color)
             self.CD_publisher(0)
-            if (self.AruCo[0] == 0  or self.AruCo[0] == 2) or (86 > self.distance2 > 65):                                                                       ################################## Поменять На 86 - 94  ######################################
+            if (self.AruCo[0] == 0  or self.AruCo[0] == 2) or (60 > self.distance2 > 45):                                                                       ################################## Поменять На 86 - 94  ######################################
                 self.__flag = 16
                 return
             if (self.distance1 > 14):                                                                                                                                ################################## Поменять На 5 ######################################
@@ -296,7 +296,7 @@ class MainAlg(Node):
             elif (self.distance1 < 10):
                 self.motor_publisher(5, 5)
                 return
-            self.motor_publisher(4, 4)
+            self.motor_publisher(4, 3)
             
         ################################################################# 16 Flag #################################################################
         if (self.__flag == 16):
@@ -313,8 +313,8 @@ class MainAlg(Node):
                     self.motor_publisher(0,0)
                     self.__flag = 17
                     return
-            elif (self.distance2 > 70):                                                                                                                                                 ################################## Поменять На 86 - 94  ######################################
-                self.motor_publisher(3, 3)
+            elif (self.distance2 < 50):                                                                                                                                                 ################################## Поменять На 86 - 94  ######################################
+                self.motor_publisher(3, 4)
                 return
             else:
                 self.__flag = 15
