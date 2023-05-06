@@ -18,6 +18,7 @@ class MainAlg(Node):
     distance3 = 0
     AruCo = [-1,-1]
     AruCo_Color = "None"
+    AruCoColorFlag = "None"
     color = "None"
 
     def __init__(self):
@@ -277,6 +278,7 @@ class MainAlg(Node):
                     self.motor_publisher(4, 6)
                     eventlet.sleep(1.9)
                     self.motor_publisher(0, 0)
+                    self.AruCoColorFlag = self.AruCo_Color
                     self.__flag = 15
                     return
 
