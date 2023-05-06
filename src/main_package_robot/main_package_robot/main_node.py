@@ -348,7 +348,7 @@ class MainAlg(Node):
             if (self.distance1 > 15):
                 self.motor_publisher(4, 6)
                 return
-            if (self.AruCoColorFlag == "Red"):
+            elif (self.AruCoColorFlag == "Red"):
                 self.motor_publisher(4, 4)
                 if self.color != "Red":
                     self.motor_publisher(4, 3)
@@ -356,7 +356,7 @@ class MainAlg(Node):
                     self.motor_publisher(0 ,0)
                     self.__flag = 19
                     return
-            if (self.AruCoColorFlag == "Green"):
+            elif (self.AruCoColorFlag == "Green"):
                 self.motor_publisher(4, 3)
                 if self.color == "Blue":
                     self.motor_publisher(4, 4)
@@ -364,7 +364,7 @@ class MainAlg(Node):
                     self.motor_publisher(0 ,0)
                     self.__flag = 19
                     return    
-            if (self.AruCoColorFlag == "Blue"):
+            elif (self.AruCoColorFlag == "Blue"):
                 self.motor_publisher(4, 3)
                 if self.color == "Blue":
                     self.motor_publisher(4, 3)
