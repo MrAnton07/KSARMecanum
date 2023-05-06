@@ -9,16 +9,16 @@ from std_msgs.msg import Int32MultiArray
 from std_msgs.msg import String
 
 class MainAlg(Node):
-    __flag = 18                                                                                                                                                      ################################## Можно Менять На Поле Для Отладки  ######################################
+    __flag = 1                                                                                                                                                      ################################## Можно Менять На Поле Для Отладки  ######################################
     __AruCoFlag = 0
     __TipTap = 0
     __Blue = 0
-    distance1 = 20
+    distance1 = 0
     distance2 = 0
     distance3 = 0
     AruCo = [-1,-1]
     AruCo_Color = "None"
-    AruCoColorFlag = "Red"
+    AruCoColorFlag = "None"
     color = "None"
 
     def __init__(self):
