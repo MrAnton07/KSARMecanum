@@ -47,7 +47,7 @@ class MainAlg(Node):
                     self.__flag = 10
                     return
             if (self.distance1 > 14):                                                                                                                                ################################## Поменять На 5 ######################################
-                self.motor_publisher(5, 6)
+                self.motor_publisher(7, 6)
                 return
             self.motor_publisher(4, 4)
 
@@ -117,7 +117,7 @@ class MainAlg(Node):
                 self.motor_publisher(0, 0)
                 self.__flag = 6
                 return
-            self.motor_publisher(4, 4)
+            self.motor_publisher(7, 4)
 
         ################################################################# 6 Flag #################################################################
         if (self.__flag == 6):
@@ -129,6 +129,7 @@ class MainAlg(Node):
                 self.motor_publisher(4, 1)
                 eventlet.sleep(9.1)
                 self.motor_publisher(0, 0)
+                self.CD_publisher(0)
                 self.__flag = 7
                 return
             self.motor_publisher(7, 4)
