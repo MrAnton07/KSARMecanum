@@ -148,6 +148,7 @@ class MainAlg(Node):
             if(15 > self.distance1):
                 self.motor_publisher(7, 5)
                 return
+            
             self.motor_publisher(7, 4)
             if (self.color == "Blue"):
                 self.motor_publisher(0, 0)
@@ -252,10 +253,63 @@ class MainAlg(Node):
                 self.__flag = 9
                 return
             self.motor_publisher(4,3)        
-            if(self.distance3 < 35):                                                                                                                                          ################################## Сделать Распознавание Цвета Через Маркер И ТД ######################################
+            if(self.distance3 < 19):                                                                                                                                          ################################## Сделать Распознавание Цвета Через Маркер И ТД ######################################
                 self.motor_publisher(0, 0)
+                self.AruCo_Color = "None"
                 self.__flag = 14
                 return
+            
+        ################################################################# 14 Flag #################################################################
+        if (self.__flag == 14):
+            self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
+            self.get_logger().info('ARUCO COLOR: "%s"' % self.AruCo_Color)
+            self.CD_publisher(0)
+            if (self.AruCo_Color != "None"):
+                if (self.distance1 < 80):
+                    self.motor_publisher(7, 5)
+                    return 
+                else:
+                    self.motor_publisher(4, 1)
+                    eventlet.sleep(9)
+                    self.motor_publisher(4, 6)
+                    eventlet.sleep(1.9)
+                    self.motor_publisher(0, 0)
+                    self.__flag = 15
+
+        ################################################################# 15 Flag #################################################################
+        if (self.__flag == 15):
+            self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
+            self.get_logger().info('ARUCO COLOR: "%s"' % self.AruCo_Color)
+            self.CD_publisher(0)
+            if (self.AruCo[0] == 0  or self.AruCo[0] == 2) or (86 > self.distance2 > 65):                                                                       ################################## Поменять На 86 - 94  ######################################
+                self.__flag = 16
+                return
+            if (self.distance1 > 14):                                                                                                                                ################################## Поменять На 5 ######################################
+                self.motor_publisher(5, 6)
+                return
+            elif (self.distance1 < 10):
+                self.motor_publisher(5, 5)
+                return
+            self.motor_publisher(4, 4)
+            
+        ################################################################# 16 Flag #################################################################
+        if (self.__flag == 16):
+            self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
+            self.CD_publisher(0)
+            if((self.AruCo[0] == 0  or self.AruCo[0] == 2)):
+                if self.AruCo[1] <- 20:
+                    self.motor_publisher(abs(int(self.AruCo[1]/25)),3)
+                elif self.AruCo[1] > 20:
+                    self.motor_publisher(abs(int(self.AruCo[1]/25)),4)
+                else:
+                    self.motor_publisher(0,0)
+                    self.__flag = 17
+                    return
+            elif (self.distance2 > 70):                                                                                                                                                 ################################## Поменять На 86 - 94  ######################################
+                self.motor_publisher(3, 3)
+                return
+            
+        
 
     def CD_publisher(self, servo_mess):
         msg = Int32()
@@ -290,6 +344,12 @@ class MainAlg(Node):
 
     def aruco_callback(self, msg):
         self.AruCo = msg.data
+        if 13 in msg.data:
+            self.AruCo_Color = "Blue"
+        if 12 in msg.data:
+            self.AruCo_Color = "Green"
+        if 11 in msg.data:
+            self.AruCo_Color = "Red"
 
     def color_callback(self, msg):
         self.color = msg.data
