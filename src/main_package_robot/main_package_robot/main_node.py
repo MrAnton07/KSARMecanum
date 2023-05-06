@@ -58,10 +58,10 @@ class MainAlg(Node):
             self.CD_publisher(0)
             if self.AruCo[0] == 0  or self.AruCo[0] == 2:
     
-                if self.AruCo[1] < -20:
+                if self.AruCo[1] < -14:
                     self.motor_publisher(abs(int(self.AruCo[1]/26)),3)
                     return
-                elif self.AruCo[1] > 20:
+                elif self.AruCo[1] > 14:
                     self.motor_publisher(abs(int(self.AruCo[1]/26)),4)
                     return
                 else:
@@ -81,7 +81,7 @@ class MainAlg(Node):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.get_logger().info('DISTANCE: "%d"' % self.distance1)
             if self.AruCo[0] == 0  or self.AruCo[0] == 2:
-                if abs(self.AruCo[1]) > 25:
+                if abs(self.AruCo[1]) > 17:
                     self.__flag = 2
                     return                                       #Вынести Этот Блок Кода В Функцию
             if self.distance1 > 30:                                                                                                                                     ################################## Поменять На 34  ######################################             
@@ -181,7 +181,7 @@ class MainAlg(Node):
                 return
             elif (self.__AruCoFlag == 0):
                 self.motor_publisher(3, 3)
-                eventlet.sleep(0.7)
+                eventlet.sleep(1)
                 self.motor_publisher(0, 0)
                 eventlet.sleep(3)
                 self.__flag = 10             
@@ -199,9 +199,9 @@ class MainAlg(Node):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.CD_publisher(0)
             if((self.AruCo[0] == 0  or self.AruCo[0] == 2)):
-                if self.AruCo[1] <-15:
+                if self.AruCo[1] <-12:
                     self.motor_publisher(abs(int(self.AruCo[1]/25)),3)
-                elif self.AruCo[1] >15:
+                elif self.AruCo[1] >12:
                     self.motor_publisher(abs(int(self.AruCo[1]/25)),4)
                 else:
                     self.motor_publisher(0,0)
@@ -220,7 +220,7 @@ class MainAlg(Node):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.get_logger().info('DISTANCE: "%d"' % self.distance1)
             if self.AruCo[0] == 0  or self.AruCo[0] == 2:
-                if abs(self.AruCo[1]) > 20:
+                if abs(self.AruCo[1]) > 16:
                     self.__flag = 10
                     return
             # if self.distance1 > 90:    
@@ -325,10 +325,10 @@ class MainAlg(Node):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.CD_publisher(0)
             if((self.AruCo[0] == 0  or self.AruCo[0] == 2)):
-                if self.AruCo[1] < -20:
+                if self.AruCo[1] < -14:
                     self.motor_publisher(abs(int(self.AruCo[1]/25)),3)
                     return
-                elif self.AruCo[1] > 20:
+                elif self.AruCo[1] > 14:
                     self.motor_publisher(abs(int(self.AruCo[1]/25)),4)
                     return
                 else:
@@ -346,7 +346,7 @@ class MainAlg(Node):
         if (self.__flag == 17):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag) 
             if self.AruCo[0] == 0  or self.AruCo[0] == 2:
-                if abs(self.AruCo[1]) > 25:
+                if abs(self.AruCo[1]) > 17:
                     self.__flag = 16
                     return       
             if (self.distance1 > 30):
