@@ -13,12 +13,12 @@ class MainAlg(Node):
     __AruCoFlag = 0
     __TipTap = 0
     __Blue = 0
-    distance1 = 0
+    distance1 = 20
     distance2 = 0
     distance3 = 0
     AruCo = [-1,-1]
     AruCo_Color = "None"
-    AruCoColorFlag = "Blue"
+    AruCoColorFlag = "Red"
     color = "None"
 
     def __init__(self):
