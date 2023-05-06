@@ -220,7 +220,7 @@ class MainAlg(Node):
                 if abs(self.AruCo[1]) > 20:
                     self.__flag = 10
                     return
-            if self.distance1 > 84:    
+            if self.distance1 > 90:    
                 self.motor_publisher(0, 0)                                                                                                                                                  ################################## Поменять На +-35  ######################################
                 self.CD_publisher(1)
                 eventlet.sleep(0.3)
