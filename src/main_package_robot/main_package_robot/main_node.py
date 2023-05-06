@@ -41,6 +41,7 @@ class MainAlg(Node):
             if (self.AruCo[0] == 0  or self.AruCo[0] == 2) or (100 < self.distance2 <110):                                                                       ################################## Поменять На 86 - 94  ######################################
                 if(self.__TipTap == 0):
                     self.__flag = 2
+                    return
                 else:
                     self.__flag = 10
                 return
