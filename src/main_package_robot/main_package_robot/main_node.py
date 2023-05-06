@@ -56,17 +56,17 @@ class MainAlg(Node):
             self.CD_publisher(0)
             if self.AruCo[0] == 0  or self.AruCo[0] == 2:
     
-                if self.AruCo[1] < -17:
-                    self.motor_publisher(abs(int(self.AruCo[1]/25)),3)
+                if self.AruCo[1] < -20:
+                    self.motor_publisher(abs(int(self.AruCo[1]/26)),3)
                     return
-                elif self.AruCo[1] > 17:
-                    self.motor_publisher(abs(int(self.AruCo[1]/25)),4)
+                elif self.AruCo[1] > 20:
+                    self.motor_publisher(abs(int(self.AruCo[1]/26)),4)
                     return
                 else:
                     self.motor_publisher(0,0)
                     self.__flag = 3
                     return
-            if(self.distance2 > 30):                                                                                                                                 ################################## Поменять На 60  ######################################
+            if(self.distance2 > 50):                                                                                                                                 ################################## Поменять На 60  ######################################
                 self.motor_publisher(3,3)
                 return
             else:
@@ -79,7 +79,7 @@ class MainAlg(Node):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.get_logger().info('DISTANCE: "%d"' % self.distance1)
             if self.AruCo[0] == 0  or self.AruCo[0] == 2:
-                if abs(self.AruCo[1]) > 20:
+                if abs(self.AruCo[1]) > 25:
                     self.__flag = 2
                     return                                       #Вынести Этот Блок Кода В Функцию
             if self.distance1 > 30:                                                                                                                                     ################################## Поменять На 34  ######################################             
