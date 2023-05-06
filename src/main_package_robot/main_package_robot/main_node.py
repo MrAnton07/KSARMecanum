@@ -18,7 +18,7 @@ class MainAlg(Node):
     distance3 = 0
     AruCo = [-1,-1]
     AruCo_Color = "None"
-    AruCoColorFlag = "Red"
+    AruCoColorFlag = "Blue"
     color = "None"
 
     def __init__(self):
@@ -340,15 +340,20 @@ class MainAlg(Node):
                 return
             self.motor_publisher(4, 5)    
             self.CD_publisher(0)
-        
         ################################################################# 18 Flag #################################################################
         if (self.__flag == 18):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.CD_publisher(1)
-            if (self.distance1 > 15):
-                self.motor_publisher(4, 6)
+            self.motor_publisher(4, 6)
+            if (self.distance1 < 15):
+                self.__flag = 19
                 return
-            elif (self.AruCoColorFlag == "Red"):
+        
+        ################################################################# 19 Flag #################################################################
+        if (self.__flag == 19):
+            self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
+            self.CD_publisher(1)
+            if (self.AruCoColorFlag == "Red"):
                 self.motor_publisher(4, 4)
                 if self.color != "Red":
                     self.motor_publisher(4, 3)
@@ -373,8 +378,8 @@ class MainAlg(Node):
                     self.__flag = 19
                     return
 
-        ################################################################# 19 Flag #################################################################
-        if (self.__flag == 19):
+        ################################################################# 20 Flag #################################################################
+        if (self.__flag == 20):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.CD_publisher(1)
 
