@@ -44,7 +44,7 @@ class MainAlg(Node):
                     return
                 else:
                     self.__flag = 10
-                return
+                    return
             if (self.distance1 > 14):                                                                                                                                ################################## Поменять На 5 ######################################
                 self.motor_publisher(5, 6)
                 return
@@ -56,10 +56,12 @@ class MainAlg(Node):
             self.CD_publisher(0)
             if self.AruCo[0] == 0  or self.AruCo[0] == 2:
     
-                if self.AruCo[1] < -15:
+                if self.AruCo[1] < -17:
                     self.motor_publisher(abs(int(self.AruCo[1]/23)),3)
-                elif self.AruCo[1] > 15:
+                    return
+                elif self.AruCo[1] > 17:
                     self.motor_publisher(abs(int(self.AruCo[1]/23)),4)
+                    return
                 else:
                     self.motor_publisher(0,0)
                     self.__flag = 3
