@@ -47,7 +47,7 @@ class MainAlg(Node):
                 else:
                     self.__flag = 10
                     return
-            if (40 > self.distance1 > 16):                                                                                                                                ################################## Поменять На 5 ######################################
+            if (40 > self.distance1 > 19):                                                                                                                                ################################## Поменять На 5 ######################################
                 self.motor_publisher(7, 6)
                 return
             self.motor_publisher(4, 4)
@@ -214,7 +214,7 @@ class MainAlg(Node):
                 if abs(self.AruCo[1]) > 20:
                     self.__flag = 10
                     return
-            if self.distance1 > 45:    
+            if self.distance1 > 94:    
                 self.motor_publisher(0, 0)                                                                                                                                                  ################################## Поменять На +-35  ######################################
                 self.CD_publisher(1)
                 eventlet.sleep(0.3)
@@ -363,7 +363,7 @@ class MainAlg(Node):
                 self.motor_publisher(4, 3)
                 if self.color == "Blue":
                     self.motor_publisher(4, 4)
-                    eventlet.sleep(3.8)
+                    eventlet.sleep(4.2)
                     self.motor_publisher(0 ,0)
                     self.__flag = 20
                     return    
