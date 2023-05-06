@@ -248,9 +248,9 @@ class MainAlg(Node):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.CD_publisher(1)
             self.motor_publisher(4, 6)
-            eventlet.sleep(4)                                                                                                                                                        ################################## Отрегулировать  ######################################
+            eventlet.sleep(3)                                                                                                                                                        ################################## Отрегулировать  ######################################
             self.motor_publisher(4, 5)
-            eventlet.sleep(7)                                                                                                                                                        ################################## Отрегулировать  ######################################
+            eventlet.sleep(5)                                                                                                                                                        ################################## Отрегулировать  ######################################
             self.CD_publisher(0)
             self.motor_publisher(4, 6)
             eventlet.sleep(2)                                                                                                                                                        ################################## Отрегулировать  ######################################
@@ -283,7 +283,7 @@ class MainAlg(Node):
                     return 
                 else:
                     self.motor_publisher(4, 1)
-                    eventlet.sleep(9)
+                    eventlet.sleep(9.2)
                     self.motor_publisher(4, 6)
                     eventlet.sleep(1.9)
                     self.motor_publisher(0, 0)
