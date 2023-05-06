@@ -283,9 +283,9 @@ class MainAlg(Node):
                     return 
                 else:
                     self.motor_publisher(4, 1)
-                    eventlet.sleep(9.2)
+                    eventlet.sleep(9.05)
                     self.motor_publisher(4, 6)
-                    eventlet.sleep(1.9)
+                    eventlet.sleep(3)
                     self.motor_publisher(0, 0)
                     self.AruCoColorFlag = self.AruCo_Color
                     self.__flag = 15
