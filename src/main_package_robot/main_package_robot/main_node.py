@@ -172,7 +172,7 @@ class MainAlg(Node):
         if (self.__flag == 9):
             self.get_logger().info('MISSION FLAG: "%d"' % self.__flag)
             self.CD_publisher(0)
-            if (self.distance1 < 17):
+            if (self.distance1 < 15):
                 self.motor_publisher(4, 5)
                 return
             if(self.color == "Blue"):
@@ -364,7 +364,7 @@ class MainAlg(Node):
                 self.motor_publisher(4, 4)
                 if self.color != "Red":
                     self.motor_publisher(4, 3)
-                    eventlet.sleep(0.7)
+                    eventlet.sleep(1)
                     self.motor_publisher(0 ,0)
                     self.__flag = 20
                     return
