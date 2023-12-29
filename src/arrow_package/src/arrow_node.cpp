@@ -1,5 +1,5 @@
 #include "rclcpp/rclcpp.hpp"
-#include "std_msgs/msg/int32_multi_array.hpp"
+#include "std_msgs/msg/float32_multi_array.hpp"
 #include <termios.h>
 #include <stdio.h>
 
@@ -28,9 +28,9 @@ int main(int argc, char * argv[])
   rclcpp::init(argc, argv);
 
   auto node = rclcpp::Node::make_shared("keyboard_node");
-  auto publisher = node->create_publisher<std_msgs::msg::Int32MultiArray>("motor_control_topic", 10);
+  auto publisher = node->create_publisher<std_msgs::msg::Float32MultiArray>("motor_control_topic", 10);
 
-  std_msgs::msg::Int32MultiArray message;
+  std_msgs::msg::Float32MultiArray message;
 
   rclcpp::WallRate loop_rate(100);
   while (rclcpp::ok())
@@ -39,25 +39,25 @@ int main(int argc, char * argv[])
     switch(c)
     {
     case 119: // up arrow key
-      message.data = {5, 5};
+      message.data = {16.0, 0.0, 0.0};
       break;
     case 115: // down arrow key
-      message.data = {5, 6};
+      message.data = {-16.0, 0.0, 0.0};
       break;
     case 100: // right arrow key
-      message.data = {5, 4};
+      message.data = {0.0, -15.0, 0.0};
       break;
     case 97: // left arrow key
-      message.data = {5, 3};
+      message.data = {0.0, 15.0, 0.0};
       break;
     case 46: // left arrow key
-      message.data = {5, 1};
+      message.data = {14.0, 8.0, 3.0};
       break;
     case 44: // left arrow key
-      message.data = {5, 2};
+      message.data = {-8.0, -14.0, -5.0};
       break;
     default:
-      message.data = {0, 0};
+      message.data = {0.0, 0.0, 0.0};
       break;
     }
 
